@@ -34,6 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationFramework.Aero" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -62,10 +63,23 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="classes\IniFile.cs" />
+    <Compile Include="classes\IniPropertyBool.cs" />
+    <Compile Include="classes\IniPropertyEnum.cs" />
+    <Compile Include="classes\IniPropertyEnumValue.cs" />
+    <Compile Include="classes\IniPropertyFloat.cs" />
+    <Compile Include="classes\IniPropertyInt.cs" />
+    <Compile Include="classes\IniPropertyMaster.cs" />
+    <Compile Include="classes\IniPropertyName.cs" />
+    <Compile Include="classes\IniSection.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="ui\IniDataTemplates.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -92,6 +106,14 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\me3tweaks.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="propertymaps\BioEngineMapping.xml" />
+    <Resource Include="propertymaps\BioGameMapping.xml" />
+    <Resource Include="propertymaps\BioPartyMapping.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

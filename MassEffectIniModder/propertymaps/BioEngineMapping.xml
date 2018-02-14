@@ -1,0 +1,61 @@
+<properties>
+  <Section name="Engine.Engine">
+    <floatproperty propertyname="CameraFOVThreshold" friendlyname="CameraFOVThreshold" notes="Unknown at this time">15.0</floatproperty>
+  </Section>
+  <Section name="Engine.GameEngine">
+    <boolproperty propertyname="bSmoothFrameRate" friendlyname="bSmoothFrameRate" notes="Unknown at this time">TRUE</boolproperty>
+    <floatproperty propertyname="MinSmoothedFrameRate" friendlyname="MinSmoothedFrameRate" notes="Unknown at this time">22.000000</floatproperty>
+    <floatproperty propertyname="MaxSmoothedFrameRate" friendlyname="MaxSmoothedFrameRate" notes="Unknown at this time">62.000000</floatproperty>
+    <boolproperty propertyname="m_bPlayLogoMovie" friendlyname="m_bPlayLogoMovie" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="m_bIsLogoMovieInterruptable" friendlyname="m_bIsLogoMovieInterruptable" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bForceStaticTerrain" friendlyname="bForceStaticTerrain" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bEnableVSMShadows" friendlyname="bEnableVSMShadows" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bRenderTerrainCollisionAsOverlay" friendlyname="bRenderTerrainCollisionAsOverlay" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bDisablePhysXHardwareSupport" friendlyname="bDisablePhysXHardwareSupport" notes="Unknown at this time">False</boolproperty>
+    <floatproperty propertyname="TimeBetweenPurgingPendingKillObjects" friendlyname="TimeBetweenPurgingPendingKillObjects" notes="Unknown at this time">60.000000</floatproperty>
+  </Section>
+  <Section name="SystemSettings">
+    <boolproperty propertyname="StaticDecals" friendlyname="StaticDecals" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="DynamicDecals" friendlyname="DynamicDecals" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="DynamicLights" friendlyname="DynamicLights" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="DynamicShadows" friendlyname="DynamicShadows" notes="Unknown at this time">True</boolproperty>
+    <boolproperty propertyname="LightEnvironmentShadows" friendlyname="LightEnvironmentShadows" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="CompositeDynamicLights" friendlyname="CompositeDynamicLights" notes="Unknown at this time">FALSE</boolproperty>
+    <intproperty propertyname="ShadowFilterQualityBias" friendlyname="ShadowFilterQualityBias" notes="Unknown at this time">2</intproperty>
+    <boolproperty propertyname="DirectionalLightMaps" friendlyname="DirectionalLightMaps" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="MotionBlur" friendlyname="MotionBlur" notes="Unknown at this time">True</boolproperty>
+    <boolproperty propertyname="DepthOfField" friendlyname="DepthOfField" notes="Unknown at this time">True</boolproperty>
+    <boolproperty propertyname="Bloom" friendlyname="Bloom" notes="Unknown at this time">True</boolproperty>
+    <boolproperty propertyname="QualityBloom" friendlyname="QualityBloom" notes="Unknown at this time">True</boolproperty>
+    <boolproperty propertyname="SpeedTreeLeaves" friendlyname="SpeedTreeLeaves" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="SpeedTreeFronds" friendlyname="SpeedTreeFronds" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="OnlyStreamInTextures" friendlyname="OnlyStreamInTextures" notes="Unknown at this time">FALSE</boolproperty>
+    <boolproperty propertyname="LensFlares" friendlyname="LensFlares" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="FloatingPointRenderTargets" friendlyname="FloatingPointRenderTargets" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="Trilinear" friendlyname="Trilinear" notes="Unknown at this time">True</boolproperty>
+    <intproperty propertyname="SkeletalMEshLODBias" friendlyname="SkeletalMEshLODBias" notes="Unknown at this time">0</intproperty>
+    <intproperty propertyname="ParticleLODBias" friendlyname="ParticleLODBias" notes="Unknown at this time">0</intproperty>
+    <intproperty propertyname="DetailMode" friendlyname="DetailMode" notes="Unknown at this time">2</intproperty>
+    <intproperty propertyname="ShadowFilterQualityBias" friendlyname="ShadowFilterQualityBias" notes="Unknown at this time">0</intproperty>
+    <intproperty propertyname="MaxAnisotropy" friendlyname="MaxAnisotropy" notes="Unknown at this time">16</intproperty>
+    <intproperty propertyname="ScreenPercentage" friendlyname="ScreenPercentage" notes="Unknown at this time">100</intproperty>
+  </Section>
+  <Section name="LogFiles">
+    <intproperty propertyname="PurgeLogsDays" friendlyname="PurgeLogsDays" notes="Unknown at this time">30</intproperty>
+  </Section>
+  <Section name="D3DDrv.D3DRenderDevice">
+    <intproperty propertyname="MaxTranslucencyLayers" friendlyname="MaxTranslucencyLayers" notes="Unknown at this time">2</intproperty>
+    <intproperty propertyname="MaxTextureSize" friendlyname="MaxTextureSize" notes="Unknown at this time">2048</intproperty>
+    <boolproperty propertyname="DisableHWShadowMaps" friendlyname="DisableHWShadowMaps" notes="Unknown at this time">True</boolproperty>
+    <nameproperty propertyname="BIOPixelShaderVersion" friendlyname="BIOPixelShaderVersion" notes="Unknown at this time">ps_3_0</nameproperty>
+    <nameproperty propertyname="BIOVertexShaderVersion" friendlyname="BIOVertexShaderVersion" notes="Unknown at this time">vs_2_0</nameproperty>
+  </Section>
+  <Section name="Engine.RenderDevice">
+    <boolproperty propertyname="bUsePostProcessEffects" friendlyname="bUsePostProcessEffects" notes="Unknown at this time">True</boolproperty>
+  </Section>
+  <Section name="Engine.HopperMovment">
+    <nameproperty propertyname="NavBase" friendlyname="NavBase" notes="Unknown at this time">Bioc_Base.BioWP_Hopper</nameproperty>
+    <nameproperty propertyname="NavWall" friendlyname="NavWall" notes="Unknown at this time">Bioc_Base.BioWP_HopperWall</nameproperty>
+    <nameproperty propertyname="NavCeiling" friendlyname="NavCeiling" notes="Unknown at this time">Bioc_Base.BioWP_HopperCeiling</nameproperty>
+  </Section>
+</properties>

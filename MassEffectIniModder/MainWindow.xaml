@@ -4,9 +4,82 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MassEffectIniModder"
+        xmlns:classes="clr-namespace:MassEffectIniModder.classes"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
-    <Grid>
-        
+        Title="Mass Effect Ini Modder" Height="500" Width="900">
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="40" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100*" />
+        </Grid.ColumnDefinitions>
+        <TabControl Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <TabItem Header="BioEngine" VerticalAlignment="Stretch">
+                <ListView x:Name="ListView_BIOEngine" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontWeight="Bold" FontSize="14" Margin="8,0,0,0" Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                </ListView>
+            </TabItem>
+            <TabItem Header="BioGame" VerticalAlignment="Stretch">
+                <ListView x:Name="ListView_BIOGame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontWeight="Bold" FontSize="14" Margin="8,0,0,0" Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                </ListView>
+            </TabItem>
+            <TabItem Header="BioParty" VerticalAlignment="Stretch">
+                <ListView x:Name="ListView_BIOParty" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <ListView.GroupStyle>
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate>
+                                <DataTemplate>
+                                    <TextBlock FontWeight="Bold" FontSize="14" Margin="8,0,0,0" Text="{Binding Name}"/>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </ListView.GroupStyle>
+                </ListView>
+            </TabItem>
+            <TabItem Header="About">
+                <StackPanel Background="#FFE5E5E5">
+                    <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Text="Brought to you by"/></TextBlock>
+                    <Image HorizontalAlignment="Left" Height="100" Width="300" VerticalAlignment="Top" Source="images/me3tweaks.png"/>
+                </StackPanel>
+            </TabItem>
+        </TabControl>
+        <StatusBar Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch">
+            <StatusBar.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+                    </Grid>
+                </ItemsPanelTemplate>
+            </StatusBar.ItemsPanel>
+            <StatusBarItem>
+                <Button Content="Reset All" Click="Reset_Click" HorizontalAlignment="Left" Padding="4" Margin="10,0,0,0" ToolTip="Resets all properties that this tool can modify to default values"/>
+            </StatusBarItem>
+            <StatusBarItem Grid.Column="4" HorizontalAlignment="Right">
+                <Button Content="Save" Click="Save_Click" HorizontalAlignment="Right" Padding="4" Margin="0,0,10,0" ToolTip="Commits your edits to Mass Effect's configuration files"/>
+            </StatusBarItem>
+        </StatusBar>
     </Grid>
 </Window>

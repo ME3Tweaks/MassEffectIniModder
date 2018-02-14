@@ -1,0 +1,289 @@
+<properties>
+  <Section name="DefaultPlayer">
+    <nameproperty propertyname="Name" friendlyname="Name" notes="Unknown at this time">Player</nameproperty>
+    <intproperty propertyname="team" friendlyname="team" notes="Unknown at this time">255</intproperty>
+    <nameproperty propertyname="Class" friendlyname="Class" notes="Unknown at this time">BIOC_Base.BioPlayerController</nameproperty>
+  </Section>
+  <Section name="Engine.HUD">
+    <boolproperty propertyname="bMessageBeep" friendlyname="bMessageBeep" notes="Unknown at this time">true</boolproperty>
+    <floatproperty propertyname="HudCanvasScale" friendlyname="HudCanvasScale" notes="Unknown at this time">0.95</floatproperty>
+    <intproperty propertyname="ConsoleMessageCount" friendlyname="ConsoleMessageCount" notes="Unknown at this time">4</intproperty>
+    <intproperty propertyname="ConsoleFontSize" friendlyname="ConsoleFontSize" notes="Unknown at this time">5</intproperty>
+    <intproperty propertyname="MessageFontOffset" friendlyname="MessageFontOffset" notes="Unknown at this time">0</intproperty>
+    <boolproperty propertyname="bShowHud" friendlyname="bShowHud" notes="Unknown at this time">true</boolproperty>
+    <nameproperty propertyname="DebugDisplay" friendlyname="DebugDisplay" notes="Unknown at this time">AI</nameproperty>
+  </Section>
+  <Section name="Engine.WorldInfo">
+    <floatproperty propertyname="DefaultGravityZ" friendlyname="DefaultGravityZ" notes="Unknown at this time">-981.0</floatproperty>
+    <floatproperty propertyname="RBPhysicsGravityScaling" friendlyname="RBPhysicsGravityScaling" notes="Unknown at this time">1.0</floatproperty>
+    <floatproperty propertyname="SquintModeKernelSize" friendlyname="SquintModeKernelSize" notes="Unknown at this time">128.0</floatproperty>
+    <intproperty propertyname="TraceAdjust" friendlyname="TraceAdjust" notes="Unknown at this time">2</intproperty>
+  </Section>
+  <Section name="Engine.Pawn">
+    <boolproperty propertyname="m_bBioHesitationOn" friendlyname="m_bBioHesitationOn" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="m_bBioDebugMountFall" friendlyname="m_bBioDebugMountFall" notes="Unknown at this time">FALSE</boolproperty>
+    <nameproperty propertyname="MaxStepHeight" friendlyname="MaxStepHeight" notes="Unknown at this time">40.0;</nameproperty>
+    <intproperty propertyname="VehicleCheckRadius" friendlyname="VehicleCheckRadius" notes="Unknown at this time">500</intproperty>
+  </Section>
+  <Section name="BIOC_Base.BioWorldInfo">
+    <intproperty propertyname="m_nScalePawnsToCharacterLevel" friendlyname="m_nScalePawnsToCharacterLevel" notes="Unknown at this time">0</intproperty>
+    <boolproperty propertyname="m_bAdvancedDifficultyScaling" friendlyname="m_bAdvancedDifficultyScaling" notes="Unknown at this time">TRUE</boolproperty>
+    <nameproperty propertyname="m_bAllowTreasureLogging" friendlyname="m_bAllowTreasureLogging" notes="Unknown at this time">FALSE;</nameproperty>
+    <nameproperty propertyname="m_fGameOverPauseTime" friendlyname="m_fGameOverPauseTime" notes="Unknown at this time">3.0f</nameproperty>
+    <nameproperty propertyname="m_fConversationInterruptDistance" friendlyname="m_fConversationInterruptDistance" notes="Unknown at this time">2500.0f</nameproperty>
+    <nameproperty propertyname="m_fIdleCameraSpeed" friendlyname="m_fIdleCameraSpeed" notes="Unknown at this time">1.0f</nameproperty>
+    <boolproperty propertyname="m_bForceDisableTutorials" friendlyname="m_bForceDisableTutorials" notes="Unknown at this time">FALSE</boolproperty>
+    <boolproperty propertyname="m_bPartyMembersImmuneToExternalForce" friendlyname="m_bPartyMembersImmuneToExternalForce" notes="Unknown at this time">TRUE</boolproperty>
+  </Section>
+  <Section name="BIOC_Base.BioPlayerController">
+    <nameproperty propertyname="m_bUpdateRadarHud" friendlyname="m_bUpdateRadarHud" notes="Unknown at this time">FALSE;</nameproperty>
+    <floatproperty propertyname="m_fRadarGUISize" friendlyname="m_fRadarGUISize" notes="Unknown at this time">76.5</floatproperty>
+    <boolproperty propertyname="m_bBackLockedToWallForCover" friendlyname="m_bBackLockedToWallForCover" notes="Unknown at this time">FALSE</boolproperty>
+  </Section>
+  <Section name="BIOC_Base.BioAIController">
+    <floatproperty propertyname="m_fPartyCoverSearchRadius" friendlyname="m_fPartyCoverSearchRadius" notes="Unknown at this time">750.0</floatproperty>
+    <boolproperty propertyname="m_bDesignerClearAllActionsDisplay" friendlyname="m_bDesignerClearAllActionsDisplay" notes="Unknown at this time">FALSE</boolproperty>
+    <boolproperty propertyname="m_bPawnTeleportOnFailure" friendlyname="m_bPawnTeleportOnFailure" notes="Unknown at this time">FALSE</boolproperty>
+    <nameproperty propertyname="m_AIWeaponTargetStepoutBiases" friendlyname="m_AIWeaponTargetStepoutBiases" notes="Unknown at this time">0.5;</nameproperty>
+    <floatproperty propertyname="m_AIPowerTargetStepoutBiases" friendlyname="m_AIPowerTargetStepoutBiases" notes="Unknown at this time">1.0</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioCamera">
+    <boolproperty propertyname="m_bCameraIsWidescreen" friendlyname="m_bCameraIsWidescreen" notes="Unknown at this time">true</boolproperty>
+  </Section>
+  <Section name="BIOC_Base.BioCameraUtility">
+    <intproperty propertyname="m_bDoCamShake" friendlyname="m_bDoCamShake" notes="Unknown at this time">1</intproperty>
+  </Section>
+  <Section name="BIOC_Base.BioCharacterImporter">
+    <enumproperty propertyname="m_femaleActorType" friendlyname="Female Shepard model" notes="Change which character you play as. Anyone but shepard will cause some loss of functionality - bugs may occur.e">
+      <enumvalue friendlyname="Female Shepard">BIOG_Female_Player_C.Human.Human_Female</enumvalue>
+      <enumvalue friendlyname="Ashley">BIOG_HumanFemale_Hench_C.hench_humanfemale</enumvalue>
+      <enumvalue friendlyname="Kaidan">BIOG_HumanMale_Hench_C. hench_humanmale </enumvalue>
+      <enumvalue friendlyname="Garrus">BIOG_Turian_Hench_C.hench_turian</enumvalue>
+      <enumvalue friendlyname="Wrex">BIOG_Krogan_Hench_C.hench_krogan</enumvalue>
+      <enumvalue friendlyname="Tali">BIOG_Quarian_Hench_C.hench_quarian</enumvalue>
+      <enumvalue friendlyname="Liara">BIOG_Asari_Hench_C.hench_asari</enumvalue>
+      <enumvalue friendlyname="Jenkins">BIOG_Jenkins_Hench_C.hench_jenkins</enumvalue>
+    </enumproperty>
+    <enumproperty propertyname="m_MaleActorType" friendlyname="Male Shepard model" notes="Change which character you play as. Anyone but shepard will cause some loss of functionality - bugs may occur.">
+      <enumvalue friendlyname="Female Shepard">BIOG_Male_Player_C.Human.Human_Male</enumvalue>
+      <enumvalue friendlyname="Ashley">BIOG_HumanFemale_Hench_C.hench_humanfemale</enumvalue>
+      <enumvalue friendlyname="Kaidan">BIOG_HumanMale_Hench_C. hench_humanmale </enumvalue>
+      <enumvalue friendlyname="Garrus">BIOG_Turian_Hench_C.hench_turian</enumvalue>
+      <enumvalue friendlyname="Wrex">BIOG_Krogan_Hench_C.hench_krogan</enumvalue>
+      <enumvalue friendlyname="Tali">BIOG_Quarian_Hench_C.hench_quarian</enumvalue>
+      <enumvalue friendlyname="Liara">BIOG_Asari_Hench_C.hench_asari</enumvalue>
+      <enumvalue friendlyname="Jenkins">BIOG_Jenkins_Hench_C.hench_jenkins</enumvalue>
+    </enumproperty>    
+  </Section>
+  <Section name="BIOC_Base.BioSPGame">
+    <enumproperty propertyname="m_sDefaultPlayerActorType" friendlyname="Default player type" notes="Default player type. Same as male/female shepard model.">
+      <enumvalue friendlyname="Female Shepard">BIOG_Male_Player_C.Human.Human_Male</enumvalue>
+      <enumvalue friendlyname="Ashley">BIOG_HumanFemale_Hench_C.hench_humanfemale</enumvalue>
+      <enumvalue friendlyname="Kaidan">BIOG_HumanMale_Hench_C. hench_humanmale </enumvalue>
+      <enumvalue friendlyname="Garrus">BIOG_Turian_Hench_C.hench_turian</enumvalue>
+      <enumvalue friendlyname="Wrex">BIOG_Krogan_Hench_C.hench_krogan</enumvalue>
+      <enumvalue friendlyname="Tali">BIOG_Quarian_Hench_C.hench_quarian</enumvalue>
+      <enumvalue friendlyname="Liara">BIOG_Asari_Hench_C.hench_asari</enumvalue>
+      <enumvalue friendlyname="Jenkins">BIOG_Jenkins_Hench_C.hench_jenkins</enumvalue>
+    </enumproperty>  
+  </Section>
+  <Section name="BIOC_Base.BioActorBehavior">
+    <boolproperty propertyname="m_bAreShieldsDisabled" friendlyname="m_bAreShieldsDisabled" notes="Unknown at this time">FALSE</boolproperty>
+    <boolproperty propertyname="AllowFriendlyCollateral" friendlyname="Friendly fire" notes="Turns friendly fire on or off. This also affects NPCs. Killing a quest NPC will effectively softlock your game.">FALSE</boolproperty>
+    <floatproperty propertyname="m_fFiringObsticalAbortPercentage" friendlyname="m_fFiringObsticalAbortPercentage" notes="Unknown at this time">0.33</floatproperty>
+    <floatproperty propertyname="m_fFiringAbortCutoffRadius" friendlyname="m_fFiringAbortCutoffRadius" notes="Unknown at this time">300.0</floatproperty>
+    <boolproperty propertyname="m_bPhysicsDamageEnabled" friendlyname="m_bPhysicsDamageEnabled" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="m_bPhysicsDamageLoggingEnabled" friendlyname="m_bPhysicsDamageLoggingEnabled" notes="Unknown at this time">FALSE</boolproperty>
+    <nameproperty propertyname="m_fPhysicsDamagePerRelVel" friendlyname="m_fPhysicsDamagePerRelVel" notes="Unknown at this time">0.02f</nameproperty>
+    <nameproperty propertyname="m_fPhysicsDamageImpulsePerRelVel" friendlyname="m_fPhysicsDamageImpulsePerRelVel" notes="Unknown at this time">0.01f</nameproperty>
+    <floatproperty propertyname="m_fHenchAimLagFactor" friendlyname="m_fHenchAimLagFactor" notes="Unknown at this time">0.25</floatproperty>
+    <floatproperty propertyname="m_fMaxHenchAimDist" friendlyname="m_fMaxHenchAimDist" notes="Unknown at this time">300.0</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioBaseSquad">
+    <nameproperty propertyname="m_fGrimeIncGrime" friendlyname="m_fGrimeIncGrime" notes="Unknown at this time">0.0025</nameproperty>
+    <nameproperty propertyname="m_fGrimeIncDirt" friendlyname="m_fGrimeIncDirt" notes="Unknown at this time">0.00125</nameproperty>
+    <nameproperty propertyname="m_fGrimeIncPeriod" friendlyname="m_fGrimeIncPeriod" notes="Unknown at this time">0.5</nameproperty>
+  </Section>
+  <Section name="BIOC_Base.BioSquadAI">
+    <floatproperty propertyname="m_nPerceptionFrequency" friendlyname="m_nPerceptionFrequency" notes="Amount of time in seconds it takes the entire squad to update perception versus the player squad">1.0</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioItem">
+    <floatproperty propertyname="m_fSalvageMultiplier" friendlyname="m_fSalvageMultiplier" notes="Unknown at this time">0.1</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioCameraBehaviorConversation">
+    <boolproperty propertyname="m_bIdleCamEnabled" friendlyname="m_bIdleCamEnabled" notes="Unknown at this time">FALSE</boolproperty>
+  </Section>
+  <Section name="BIOC_Base.BioConversation">
+    <boolproperty propertyname="m_bNewConversationSystem" friendlyname="m_bNewConversationSystem" notes="Unknown at this time">TRUE</boolproperty>
+    <floatproperty propertyname="m_fShowRepliesOffset" friendlyname="m_fShowRepliesOffset" notes="Unknown at this time">-2.0</floatproperty>
+    <floatproperty propertyname="m_fShowLastLineOffset" friendlyname="m_fShowLastLineOffset" notes="Unknown at this time">150.0</floatproperty>
+    <boolproperty propertyname="m_bDisplayNonAmbientName" friendlyname="m_bDisplayNonAmbientName" notes="Unknown at this time">TRUE</boolproperty>
+    <floatproperty propertyname="m_fSubtitleTimingModifier" friendlyname="m_fSubtitleTimingModifier" notes="Unknown at this time">0.5</floatproperty>
+    <floatproperty propertyname="m_fSubtitleTimingMinimum" friendlyname="m_fSubtitleTimingMinimum" notes="Unknown at this time">2.0</floatproperty>
+    <boolproperty propertyname="m_bEnableLookAtWithStage" friendlyname="m_bEnableLookAtWithStage" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="m_bRemoveWeapons" friendlyname="m_bRemoveWeapons" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="m_bEnableConvCooking" friendlyname="m_bEnableConvCooking" notes="Unknown at this time">TRUE</boolproperty>
+    <floatproperty propertyname="m_fVOInterruptRampDownTime" friendlyname="m_fVOInterruptRampDownTime" notes="Unknown at this time">1.0</floatproperty>
+    <floatproperty propertyname="m_fTutorialDelay" friendlyname="m_fTutorialDelay" notes="Unknown at this time">10.0</floatproperty>
+    <boolproperty propertyname="m_bNextLinePreLoadEnabled" friendlyname="m_bNextLinePreLoadEnabled" notes="Unknown at this time">TRUE</boolproperty>
+  </Section>
+  <Section name="BIOC_Base.BioPawnBehavior">
+    <floatproperty propertyname="m_fStabilityAtMaxError" friendlyname="m_fStabilityAtMaxError" notes="Unknown at this time">0.0</floatproperty>
+    <floatproperty propertyname="m_fStabilityAtMinError" friendlyname="m_fStabilityAtMinError" notes="Unknown at this time">1.0</floatproperty>
+    <intproperty propertyname="m_bDrawReiculeSimDebugCircles" friendlyname="m_bDrawReiculeSimDebugCircles" notes="Unknown at this time">0</intproperty>
+    <boolproperty propertyname="m_bEnableLeaning" friendlyname="m_bEnableLeaning" notes="Unknown at this time">FALSE</boolproperty>
+    <nameproperty propertyname="m_fPainSoundDamageThreshold" friendlyname="m_fPainSoundDamageThreshold" notes="Unknown at this time">1.0f</nameproperty>
+    <boolproperty propertyname="m_bAllowPhysicsOnDeadBodies" friendlyname="m_bAllowPhysicsOnDeadBodies" notes="Unknown at this time">FALSE</boolproperty>
+    <nameproperty propertyname="m_fMeshAdjCheckFrequency" friendlyname="m_fMeshAdjCheckFrequency" notes="Unknown at this time">0.15f</nameproperty>
+    <nameproperty propertyname="m_fMeshAdjFarCheckFrequency" friendlyname="m_fMeshAdjFarCheckFrequency" notes="Unknown at this time">1.0f</nameproperty>
+    <nameproperty propertyname="m_fMeshAdjFarCheckDistance" friendlyname="m_fMeshAdjFarCheckDistance" notes="Unknown at this time">2000.0f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutThreshold" friendlyname="m_fBleedOutThreshold" notes="Unknown at this time">0.25f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutMinDamageResistance" friendlyname="m_fBleedOutMinDamageResistance" notes="Unknown at this time">0.25f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutCasualMinDamageResistance" friendlyname="m_fBleedOutCasualMinDamageResistance" notes="Unknown at this time">0.1f</nameproperty>
+    <nameproperty propertyname="m_fHardCoreEnemyDamageReduction" friendlyname="m_fHardCoreEnemyDamageReduction" notes="Unknown at this time">0.75f</nameproperty>
+    <nameproperty propertyname="m_fInsanityEnemyDamageReduction" friendlyname="m_fInsanityEnemyDamageReduction" notes="Unknown at this time">0.5f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutMinHealthRegenRate" friendlyname="m_fBleedOutMinHealthRegenRate" notes="Unknown at this time">0.0017f</nameproperty>
+    <nameproperty propertyname="m_fCasualBonusHealthRegenRate" friendlyname="m_fCasualBonusHealthRegenRate" notes="Unknown at this time">2.0f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutSoundDurationStart" friendlyname="m_fBleedOutSoundDurationStart" notes="Unknown at this time">2.0f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutSoundDurationEnd" friendlyname="m_fBleedOutSoundDurationEnd" notes="Unknown at this time">1.0f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutSoundVolumeStart" friendlyname="m_fBleedOutSoundVolumeStart" notes="Unknown at this time">0.5f</nameproperty>
+    <nameproperty propertyname="m_fBleedOutSoundVolumeEnd" friendlyname="m_fBleedOutSoundVolumeEnd" notes="Unknown at this time">1.0f</nameproperty>
+    <nameproperty propertyname="m_nmBleedOutVFXParameter" friendlyname="m_nmBleedOutVFXParameter" notes="Unknown at this time">fb_Damage</nameproperty>
+    <intproperty propertyname="m_fDeathCapabilityActivationTime" friendlyname="m_fDeathCapabilityActivationTime" notes="Unknown at this time">2</intproperty>
+    <floatproperty propertyname="m_fVehicleExpScaleFactor" friendlyname="m_fVehicleExpScaleFactor" notes="Unknown at this time">0.4</floatproperty>
+    <floatproperty propertyname="m_fHenchDamageResistance" friendlyname="m_fHenchDamageResistance" notes="Unknown at this time">0.75</floatproperty>
+    <floatproperty propertyname="m_fHenchCasualDamageResistance" friendlyname="m_fHenchCasualDamageResistance" notes="Unknown at this time">0.5</floatproperty>
+    <nameproperty propertyname="m_aTargetTipDefaults" friendlyname="m_aTargetTipDefaults" notes="Unknown at this time">159225	//Humanoid cretures that can be talked to.</nameproperty>
+  </Section>
+  <Section name="BIOC_Base.BioItemWeaponRanged">
+    <floatproperty propertyname="m_fBestRangeConst" friendlyname="m_fBestRangeConst" notes="Unknown at this time">10.0</floatproperty>
+    <floatproperty propertyname="m_fMinRangeConst" friendlyname="m_fMinRangeConst" notes="Unknown at this time">4000.0</floatproperty>
+    <floatproperty propertyname="m_fMaxRangeConst" friendlyname="m_fMaxRangeConst" notes="Unknown at this time">60.0</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioWeapon">
+    <floatproperty propertyname="m_fWeaponShotImpactNoise" friendlyname="m_fWeaponShotImpactNoise" notes="Unknown at this time">1.0</floatproperty>
+    <nameproperty propertyname="m_nActivatedMatParamName" friendlyname="m_nActivatedMatParamName" notes="Unknown at this time">WPN_MASTER_Emis_ColourTint</nameproperty>
+    <nameproperty propertyname="m_vActivatedMatParamColor_Active" friendlyname="m_vActivatedMatParamColor_Active" notes="Unknown at this time">(R=1,G=2,B=20)</nameproperty>
+    <nameproperty propertyname="m_vActivatedMatParamColor_Inactive" friendlyname="m_vActivatedMatParamColor_Inactive" notes="Unknown at this time">(R=20,G=2,B=1)</nameproperty>
+  </Section>
+  <Section name="BIOC_Base.BioWeaponRanged">
+    <floatproperty propertyname="m_fProjectilesSpreadModifier" friendlyname="m_fProjectilesSpreadModifier" notes="Unknown at this time">0.2</floatproperty>
+    <intproperty propertyname="m_nTraceFireTestType" friendlyname="m_nTraceFireTestType" notes="Unknown at this time">0</intproperty>
+    <intproperty propertyname="m_fOverlapRecurseBreakoutDistance" friendlyname="m_fOverlapRecurseBreakoutDistance" notes="Unknown at this time">50</intproperty>
+    <intproperty propertyname="m_nTotalNumberStrips" friendlyname="m_nTotalNumberStrips" notes="Unknown at this time">10</intproperty>
+    <intproperty propertyname="m_nTotalNumberCloseStrips" friendlyname="m_nTotalNumberCloseStrips" notes="Unknown at this time">2</intproperty>
+    <intproperty propertyname="m_nCloseStripLength" friendlyname="m_nCloseStripLength" notes="Unknown at this time">1500</intproperty>
+    <intproperty propertyname="m_nWeaponVFXLevel" friendlyname="m_nWeaponVFXLevel" notes="Unknown at this time">0</intproperty>
+    <intproperty propertyname="m_fVehicleFireDistance" friendlyname="m_fVehicleFireDistance" notes="Unknown at this time">60000</intproperty>
+    <intproperty propertyname="m_fWeaponFireDistance" friendlyname="m_fWeaponFireDistance" notes="Unknown at this time">20000</intproperty>
+    <intproperty propertyname="m_fSniperFireDistance" friendlyname="m_fSniperFireDistance" notes="Unknown at this time">40000</intproperty>
+    <floatproperty propertyname="PortArmsPistolDistance" friendlyname="PortArmsPistolDistance" notes="Unknown at this time">15.0</floatproperty>
+    <floatproperty propertyname="PortArmsShotgunDistance" friendlyname="PortArmsShotgunDistance" notes="Unknown at this time">10.0</floatproperty>
+    <floatproperty propertyname="PortArmsAssaultDistance" friendlyname="PortArmsAssaultDistance" notes="Unknown at this time">10.0</floatproperty>
+    <floatproperty propertyname="PortArmsSniperDistance" friendlyname="PortArmsSniperDistance" notes="Unknown at this time">35.0</floatproperty>
+    <nameproperty propertyname="m_fMaxVFXIntensity" friendlyname="m_fMaxVFXIntensity" notes="Unknown at this time">6.0f;</nameproperty>
+    <nameproperty propertyname="m_fMinVFXIntensity" friendlyname="m_fMinVFXIntensity" notes="Unknown at this time">0.0f;</nameproperty>
+    <nameproperty propertyname="m_fMaxVFXDecalIntensity" friendlyname="m_fMaxVFXDecalIntensity" notes="Unknown at this time">1.0f;</nameproperty>
+    <nameproperty propertyname="m_fMinVFXDecalIntensity" friendlyname="m_fMinVFXDecalIntensity" notes="Unknown at this time">0.0f;</nameproperty>
+  </Section>
+  <Section name="BIOC_Base.BioPower">
+    <floatproperty propertyname="m_fBestRangeConst" friendlyname="m_fBestRangeConst" notes="Unknown at this time">40.0</floatproperty>
+    <floatproperty propertyname="m_fAreaAttackThresholdConst" friendlyname="m_fAreaAttackThresholdConst" notes="Unknown at this time">100.0</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioArtPlaceable">
+    <floatproperty propertyname="CoverSearchRadius" friendlyname="CoverSearchRadius" notes="Unknown at this time">500.0</floatproperty>
+    <intproperty propertyname="CoverSearchRadiusSlotSize_XY" friendlyname="CoverSearchRadiusSlotSize_XY" notes="Unknown at this time">20</intproperty>
+    <intproperty propertyname="CoverSearchRadiusSlotSize_Z" friendlyname="CoverSearchRadiusSlotSize_Z" notes="Unknown at this time">90</intproperty>
+    <floatproperty propertyname="m_fMaxRelevancyDistance" friendlyname="m_fMaxRelevancyDistance" notes="Unknown at this time">6250000.0</floatproperty>
+    <nameproperty propertyname="m_bDisregardLineTestsFromBasedActor" friendlyname="m_bDisregardLineTestsFromBasedActor" notes="Unknown at this time">TRUE;</nameproperty>
+    <intproperty propertyname="m_nMaxCorpseVisibilityCleanupAttempts" friendlyname="m_nMaxCorpseVisibilityCleanupAttempts" notes="If after this many tries, the body has not gone off screen, use the distance threshold">4</intproperty>
+    <floatproperty propertyname="m_fCorpseCleanupFirstAttemptTime" friendlyname="m_fCorpseCleanupFirstAttemptTime" notes="ow many seconds to wait until the first corpse cleanup attempt">5.0</floatproperty>
+    <floatproperty propertyname="m_fCorpseCleanupAttemptRetryTime" friendlyname="m_fCorpseCleanupAttemptRetryTime" notes="How many seconds to wait between cleanup tries">2.0</floatproperty>
+    <floatproperty propertyname="m_fMaxCorpseCleanupDistanceThreshold" friendlyname="m_fMaxCorpseCleanupDistanceThreshold" notes="Distance the corpse must be from the camera before it is cleaned up even if it is in view (in centimeters)">4000.0</floatproperty>
+    <floatproperty propertyname="m_fMaxCorpseCleanupScreenSizeThreshold" friendlyname="m_fMaxCorpseCleanupScreenSizeThreshold" notes="The corpse must take up this much screen space or less before it is cleaned up even if it is in view">0.20</floatproperty>
+  </Section>
+  <Section name="BIOC_Base.BioPawn">
+    <intproperty propertyname="m_PLAYERLEVELHACK" friendlyname="m_PLAYERLEVELHACK" notes="Unknown at this time">20</intproperty>
+    <boolproperty propertyname="m_isCameraShakeEnabled" friendlyname="m_isCameraShakeEnabled" notes="Unknown at this time">TRUE</boolproperty>
+    <floatproperty propertyname="m_fWeaponLOSThreshold" friendlyname="m_fWeaponLOSThreshold" notes="Unknown at this time">0.666</floatproperty>
+    <floatproperty propertyname="PortArmsPlayerInterval" friendlyname="PortArmsPlayerInterval" notes="Unknown at this time">0.1</floatproperty>
+    <floatproperty propertyname="PortArmsNPCInterval" friendlyname="PortArmsNPCInterval" notes="Unknown at this time">0.5</floatproperty>
+    <intproperty propertyname="PortArmsWedgeHeight" friendlyname="PortArmsWedgeHeight" notes="Unknown at this time">5</intproperty>
+    <intproperty propertyname="PortArmsWedgeRadius" friendlyname="PortArmsWedgeRadius" notes="Unknown at this time">5</intproperty>
+    <nameproperty propertyname="CoverPlayerInterval" friendlyname="CoverPlayerInterval" notes="Unknown at this time">0.1	; Player cover update interval - length of time between cover updates</nameproperty>
+    <nameproperty propertyname="CoverNPCInterval" friendlyname="CoverNPCInterval" notes="Unknown at this time">0.2		; NPC cover update interval - length of time between cover updates</nameproperty>
+    <nameproperty propertyname="CoverStickyInterval" friendlyname="CoverStickyInterval" notes="Unknown at this time">0.5	; Amount of time sticky cover holds you in cover</nameproperty>
+    <nameproperty propertyname="CoverStickyResetInterval" friendlyname="CoverStickyResetInterval" notes="Unknown at this time">0.1	; Amount of time it takes to reset sticky cover</nameproperty>
+    <nameproperty propertyname="CoverTestDistance" friendlyname="CoverTestDistance" notes="Unknown at this time">50		; Forward distance to check for cover (collision radius is added in code)</nameproperty>
+    <nameproperty propertyname="CoverTestAngle" friendlyname="CoverTestAngle" notes="Unknown at this time">45		; Entrance angle for cover, push the stick within this angle into cover to enter</nameproperty>
+    <nameproperty propertyname="CoverFireTestDistance" friendlyname="CoverFireTestDistance" notes="Unknown at this time">55	; Distance forward from the lean out position to test to see if it is available</nameproperty>
+    <nameproperty propertyname="CoverFireTestRadius" friendlyname="CoverFireTestRadius" notes="Unknown at this time">25	; Radius for the extent on player fire position tests</nameproperty>
+    <nameproperty propertyname="CoverFireTestHeight" friendlyname="CoverFireTestHeight" notes="Unknown at this time">5		; Height for the extent on player fire position tests</nameproperty>
+    <nameproperty propertyname="CoverStepTestRadius" friendlyname="CoverStepTestRadius" notes="Unknown at this time">15	; Radius for the extent on testing to the lean fire position from the player position</nameproperty>
+    <nameproperty propertyname="CoverStepTestHeight" friendlyname="CoverStepTestHeight" notes="Unknown at this time">25	; Height for the extent on testing to the lean fire position from the player position</nameproperty>
+    <nameproperty propertyname="CoverMoveDirectionAngle" friendlyname="CoverMoveDirectionAngle" notes="Unknown at this time">45	; Sticky cover movement angle. If the stick is being moved in this arc it will activate sticky cover</nameproperty>
+    <nameproperty propertyname="CoverTransferCameraAngle" friendlyname="CoverTransferCameraAngle" notes="Unknown at this time">40	; Camera angle past the cover direction that cancels the lean on a given side</nameproperty>
+    <floatproperty propertyname="m_fEnableCCDMultiplierThreshold" friendlyname="m_fEnableCCDMultiplierThreshold" notes="Unknown at this time">10.0</floatproperty>
+    <nameproperty propertyname="m_nMaxCorpseVisibilityCleanupAttempts" friendlyname="m_nMaxCorpseVisibilityCleanupAttempts" notes="Unknown at this time">4		;If after this many tries, the body has not gone off screen, use the distance threshold</nameproperty>
+    <nameproperty propertyname="m_fCorpseCleanupFirstAttemptTime" friendlyname="m_fCorpseCleanupFirstAttemptTime" notes="Unknown at this time">5.0			;How many seconds to wait until the first corpse cleanup attempt</nameproperty>
+    <nameproperty propertyname="m_fCorpseCleanupAttemptRetryTime" friendlyname="m_fCorpseCleanupAttemptRetryTime" notes="Unknown at this time">2.0			;How many seconds to wait between cleanup tries</nameproperty>
+    <nameproperty propertyname="m_fMaxCorpseCleanupDistanceThreshold" friendlyname="m_fMaxCorpseCleanupDistanceThreshold" notes="Unknown at this time">4000.0		;FOR NON SKELETAL MESH CORPSES: Distance the corpse must be from the camera before it is cleaned up even if it is in view (in centimeters)</nameproperty>
+    <nameproperty propertyname="m_fMaxCorpseCleanupScreenSizeThreshold" friendlyname="m_fMaxCorpseCleanupScreenSizeThreshold" notes="Unknown at this time">0.10		;FOR SKELETAL MESH CORPSES: The corpse must take up this much screen space or less before it is cleaned up even if it is in view (see FSkeletalMeshObject::MaxDistanceFactor)</nameproperty>
+  </Section>
+  <Section name="BIOC_Base.BioActivePower">
+    <boolproperty propertyname="m_bSkipPowerCooldown" friendlyname="m_bSkipPowerCooldown" notes="Unknown at this time">FALSE</boolproperty>
+    <floatproperty propertyname="m_fLeanDelayTime" friendlyname="m_fLeanDelayTime" notes="Unknown at this time">0.5</floatproperty>
+    <floatproperty propertyname="m_fLeanDelayVarianceTime" friendlyname="m_fLeanDelayVarianceTime" notes="Unknown at this time">0.5</floatproperty>
+    <nameproperty propertyname="m_fMaxWaitTimeForAnimation" friendlyname="m_fMaxWaitTimeForAnimation" notes="Unknown at this time">5.0f</nameproperty>
+  </Section>
+  <Section name="Cover">
+    <intproperty propertyname="DefaultStandingHeight" friendlyname="DefaultStandingHeight" notes="Unknown at this time">88</intproperty>
+    <intproperty propertyname="DefaultCrouchedHeight" friendlyname="DefaultCrouchedHeight" notes="Unknown at this time">55</intproperty>
+    <intproperty propertyname="DefaultRadius" friendlyname="DefaultRadius" notes="Unknown at this time">30</intproperty>
+    <intproperty propertyname="DefaultLeanLeftDistance" friendlyname="DefaultLeanLeftDistance" notes="Unknown at this time">60</intproperty>
+    <intproperty propertyname="DefaultLeanRightDistance" friendlyname="DefaultLeanRightDistance" notes="Unknown at this time">60</intproperty>
+  </Section>
+  <Section name="DynamicCover">
+    <intproperty propertyname="m_fStandingCoverHeight" friendlyname="m_fStandingCoverHeight" notes="Unknown at this time">170</intproperty>
+    <nameproperty propertyname="m_fMidLevelCoverHeight" friendlyname="m_fMidLevelCoverHeight" notes="Unknown at this time">120;</nameproperty>
+    <nameproperty propertyname="m_fLowLevelCoverHeight" friendlyname="m_fLowLevelCoverHeight" notes="Unknown at this time">70;</nameproperty>
+    <nameproperty propertyname="m_fStandingCoverTestHeight" friendlyname="m_fStandingCoverTestHeight" notes="Unknown at this time">121;</nameproperty>
+    <nameproperty propertyname="m_fMidLevelCoverTestHeight" friendlyname="m_fMidLevelCoverTestHeight" notes="Unknown at this time">71;</nameproperty>
+    <nameproperty propertyname="m_fLowLevelCoverTestHeight" friendlyname="m_fLowLevelCoverTestHeight" notes="Unknown at this time">40;</nameproperty>
+  </Section>
+  <Section name="BIOC_Base.BioPhysicsSounds">
+    <nameproperty propertyname="m_sPhysicsSoundEntity" friendlyname="m_sPhysicsSoundEntity" notes="Unknown at this time">snd_phys_proto.se_physics</nameproperty>
+    <nameproperty propertyname="m_fMaxMass" friendlyname="m_fMaxMass" notes="Unknown at this time">100.0f</nameproperty>
+    <nameproperty propertyname="m_fMaxSpeed" friendlyname="m_fMaxSpeed" notes="Unknown at this time">500.0f</nameproperty>
+    <nameproperty propertyname="m_fMinTimeBetweenSoundByActor" friendlyname="m_fMinTimeBetweenSoundByActor" notes="Unknown at this time">0.300f 	   ;the lowers Period that a actor is allowed to play a physics sound.</nameproperty>
+    <nameproperty propertyname="m_nMaxSimultaneousSounds" friendlyname="m_nMaxSimultaneousSounds" notes="Unknown at this time">3		   ;number of audio tracks dedicated to playing physics sounds.</nameproperty>
+    <boolproperty propertyname="m_bPhysicsSoundDebug" friendlyname="m_bPhysicsSoundDebug" notes="Unknown at this time">FALSE</boolproperty>
+  </Section>
+  <Section name="BIOC_Base.BioSaveGame">
+    <nameproperty propertyname="m_bUseNewSaveSystem" friendlyname="m_bUseNewSaveSystem" notes="Unknown at this time">TRUE;</nameproperty>
+    <nameproperty propertyname="m_bIgnoreDLCRequirements" friendlyname="m_bIgnoreDLCRequirements" notes="Unknown at this time">FALSE;</nameproperty>
+    <floatproperty propertyname="m_fAutoSaveTime" friendlyname="m_fAutoSaveTime" notes="Unknown at this time">300.0</floatproperty>
+    <nameproperty propertyname="m_nNumSaveSlots" friendlyname="m_nNumSaveSlots" notes="Unknown at this time">5;</nameproperty>
+    <nameproperty propertyname="m_fAutoSaveAttemptDelay" friendlyname="m_fAutoSaveAttemptDelay" notes="Unknown at this time">2.0;</nameproperty>
+    <boolproperty propertyname="m_bFilterCharacterSaves" friendlyname="m_bFilterCharacterSaves" notes="Unknown at this time">true</boolproperty>
+    <nameproperty propertyname="m_bDissableAutoSave" friendlyname="m_bDissableAutoSave" notes="Unknown at this time">TRUE;</nameproperty>
+    <intproperty propertyname="m_nSaveGameSize" friendlyname="m_nSaveGameSize" notes="Unknown at this time">4194304</intproperty>
+    <nameproperty propertyname="m_bEnableLimitedSaves" friendlyname="m_bEnableLimitedSaves" notes="Unknown at this time">FALSE;</nameproperty>
+    <nameproperty propertyname="m_nMaxSaveGames" friendlyname="m_nMaxSaveGames" notes="Unknown at this time">999;</nameproperty>
+    <nameproperty propertyname="m_GameSpecificOptions" friendlyname="m_GameSpecificOptions" notes="Unknown at this time">OPTION_TYPE_COMBAT_DIFFICULTY;</nameproperty>
+    <nameproperty propertyname="m_GameSpecificOptions" friendlyname="m_GameSpecificOptions" notes="Unknown at this time">OPTION_TYPE_AUTO_LEVELUP;</nameproperty>
+    <nameproperty propertyname="m_GameSpecificOptions" friendlyname="m_GameSpecificOptions" notes="Unknown at this time">OPTION_TYPE_SUBTITLES;</nameproperty>
+    <nameproperty propertyname="m_GameSpecificOptions" friendlyname="m_GameSpecificOptions" notes="Unknown at this time">OPTION_TYPE_TARGET_ASSIST_MODE;</nameproperty>
+    <nameproperty propertyname="m_GameSpecificOptions" friendlyname="m_GameSpecificOptions" notes="Unknown at this time">OPTION_TYPE_SQUAD_POWER_USE;</nameproperty>
+    <nameproperty propertyname="m_GameSpecificOptions" friendlyname="m_GameSpecificOptions" notes="Unknown at this time">OPTION_TYPE_AUTO_SAVE;</nameproperty>
+    <nameproperty propertyname="m_srQuickSaveComplete" friendlyname="m_srQuickSaveComplete" notes="Unknown at this time">181127;</nameproperty>
+    <nameproperty propertyname="m_srQuickSaveFail" friendlyname="m_srQuickSaveFail" notes="Unknown at this time">181126;</nameproperty>
+  </Section>
+  <Section name="BIOGame.Movies">
+    <nameproperty propertyname="StartupMovie" friendlyname="StartupMovie" notes="Unknown at this time">BWLogo</nameproperty>
+    <nameproperty propertyname="StartupMovie" friendlyname="StartupMovie" notes="Unknown at this time">MSGS_Logo_blkFadeOut</nameproperty>
+    <nameproperty propertyname="StartupMovie" friendlyname="StartupMovie" notes="Unknown at this time">publisher</nameproperty>
+    <nameproperty propertyname="LoadingMovie" friendlyname="LoadingMovie" notes="Unknown at this time">GLO_Relay_LOAD</nameproperty>
+    <boolproperty propertyname="DisableTextureStreamingAll" friendlyname="DisableTextureStreamingAll" notes="Unknown at this time">TRUE</boolproperty>
+  </Section>
+</properties>
