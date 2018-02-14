@@ -1,7 +1,23 @@
-﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+﻿<!-- 
+Copyright (c) 2018 ME3Tweaks
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+-->
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:v="clr-namespace:MassEffectIniModder.classes"
-                    xmlns:System="clr-namespace:System;assembly=mscorlib">
+                    x:Class="MassEffectIniModder.ui.IniDataTemplates"
+                    >
     <GridLength x:Key="Column1Width">200</GridLength>
     <GridLength x:Key="Column2Width">155</GridLength>
     <GridLength x:Key="Column3Width">120</GridLength>
@@ -18,8 +34,8 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Choices}" DisplayMemberPath="FriendlyName" SelectedIndex="0"/>
-            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="Reset to default" ToolTip="{Binding OriginalValue}"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Choices}" DisplayMemberPath="FriendlyName" SelectedIndex="{Binding Path=CurrentSelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         </Grid>
     </DataTemplate>
@@ -32,8 +48,8 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <TextBox Grid.Column="1" Text="{Binding CurrentValue}" HorizontalContentAlignment="Right"/>
-            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}"  Content="Reset to default"  ToolTip="{Binding OriginalValue}"/>
+            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" />
+            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch"  VerticalAlignment="Center"/>
         </Grid>
     </DataTemplate>
@@ -46,8 +62,8 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <TextBox Grid.Column="1" Text="{Binding CurrentValue}" HorizontalContentAlignment="Right"/>
-            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}"  Content="Reset to default" ToolTip="{Binding OriginalValue}"/>
+            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" />
+            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
         </Grid>
     </DataTemplate>
@@ -60,11 +76,11 @@
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" IsEditable="False" SelectedIndex="{Binding CurrentSelectedBoolIndex}">
+            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" IsEditable="False" SelectedIndex="{Binding Path=CurrentSelectedBoolIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
                 <ComboBoxItem Content="True"/>
                 <ComboBoxItem Content="False"/>
             </ComboBox>
-            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="Reset to default" ToolTip="{Binding OriginalValue}"/>
+            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
         </Grid>
@@ -80,7 +96,7 @@
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
             <TextBlock Grid.Column="1" Text="{Binding CurrentValue}" VerticalAlignment="Center" ToolTip="{Binding PropertyName}"/>
 
-            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="Reset to default" ToolTip="{Binding OriginalValue}"/>
+            <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
 
         </Grid>
