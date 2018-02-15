@@ -1,4 +1,4 @@
-# MassEffectIniModder
+# Mass Effect Ini Modder
 Easy to use ini modding program for Mass Effect
 
-This program is in progress and is not yet functional
+![Program](https://raw.githubusercontent.com/mgamerz/MassEffectIniModder/static/meim.png)
