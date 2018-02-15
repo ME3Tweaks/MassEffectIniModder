@@ -80,9 +80,20 @@ namespace MassEffectIniModder.classes
 
         internal void OnPropertyChanged(string propertyName)
         {
-            var handler = PropertyChanged;
-            if (handler != null)
-                handler(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+        }
+
+        public virtual void LoadCurrentValue(IniFile configIni)
+        {
+            string val = configIni.Read(PropertyName, SectionName);
+            if (val.Contains(";"))
+            {
+                val = val.Substring(0,val.IndexOf(';')).Trim();
+            }
+            if (val != null)
+            {
+                CurrentValue = val;
+            }
         }
     }
 }

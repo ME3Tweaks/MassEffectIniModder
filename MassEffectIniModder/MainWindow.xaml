@@ -21,15 +21,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
         xmlns:local="clr-namespace:MassEffectIniModder"
         xmlns:classes="clr-namespace:MassEffectIniModder.classes"
         mc:Ignorable="d"
-        Title="Mass Effect Ini Modder" Height="500" Width="900">
+        Title="Mass Effect Ini Modder" Height="500" Width="1000">
     <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
         <Grid.RowDefinitions>
             <RowDefinition Height="1*" />
-            <RowDefinition Height="40" />
+            <RowDefinition Height="35" />
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100*" />
-        </Grid.ColumnDefinitions>
         <TabControl Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
             <TabItem Header="BioEngine" VerticalAlignment="Stretch">
                 <ListView x:Name="ListView_BIOEngine" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
@@ -78,24 +75,13 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </StackPanel>
             </TabItem>
         </TabControl>
-        <StatusBar Grid.Row="1" Grid.Column="0" HorizontalAlignment="Stretch">
-            <StatusBar.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="100" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="100" />
-                        </Grid.ColumnDefinitions>
-                    </Grid>
-                </ItemsPanelTemplate>
-            </StatusBar.ItemsPanel>
-            <StatusBarItem>
-                <Button Content="Reset All" Click="Reset_Click" HorizontalAlignment="Left" Padding="4" Margin="10,0,0,0" ToolTip="Resets all properties that this tool can modify to default values"/>
-            </StatusBarItem>
-            <StatusBarItem Grid.Column="4" HorizontalAlignment="Right">
-                <Button Content="Save" Click="Save_Click" HorizontalAlignment="Right" Padding="4" Margin="0,0,10,0" ToolTip="Commits your edits to Mass Effect's configuration files"/>
-            </StatusBarItem>
-        </StatusBar>
+            <DockPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="3">
+                <CheckBox Name="Checkbox_EnableInGameConsole" Content="Enable in-game console (via ~)" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="5,0,0,0" Click="Checkbox_EnableInGameConsole_Click"/>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right" VerticalAlignment="Center">
+                    <TextBlock Text="{Binding Path=Status, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" VerticalAlignment="Center"/> 
+                    <Button Content="Reset All" Click="Reset_Click" Padding="4" Margin="10,0,0,0" ToolTip="Resets all properties that this tool can modify to default values"/>
+                    <Button Content="Save" Click="Save_Click" Padding="4" Margin="10,0,5,0" ToolTip="Commits your edits to Mass Effect's configuration files"/>
+                </StackPanel>
+            </DockPanel>
     </Grid>
 </Window>

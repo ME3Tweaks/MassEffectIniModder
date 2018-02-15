@@ -1,0 +1,29 @@
+<properties>
+  <Section name="Engine.Engine">
+    <floatproperty propertyname="CameraFOVThreshold" friendlyname="CameraFOVThreshold" notes="Unknown at this time">15.0</floatproperty>
+  </Section>
+  <Section name="Engine.GameEngine">
+    <boolproperty propertyname="bSmoothFrameRate" friendlyname="Cap framerate" notes="Unknown at this time">TRUE</boolproperty>
+    <floatproperty propertyname="MinSmoothedFrameRate" friendlyname="Min framerate" notes="Framerate cap if the system is struggling to meet the max cap consistently">22</floatproperty>
+    <floatproperty propertyname="MaxSmoothedFrameRate" friendlyname="Max framerate" notes="Maximum framerate cap. Setting this to above 62 may cause issues as the tick time between frames is used in some calculations.">62</floatproperty>
+    <boolproperty propertyname="m_bPlayLogoMovie" friendlyname="m_bPlayLogoMovie" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="m_bIsLogoMovieInterruptable" friendlyname="m_bIsLogoMovieInterruptable" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bForceStaticTerrain" friendlyname="bForceStaticTerrain" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bEnableVSMShadows" friendlyname="bEnableVSMShadows" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bRenderTerrainCollisionAsOverlay" friendlyname="bRenderTerrainCollisionAsOverlay" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bDisablePhysXHardwareSupport" friendlyname="bDisablePhysXHardwareSupport" notes="Unknown at this time">False</boolproperty>
+    <floatproperty propertyname="TimeBetweenPurgingPendingKillObjects" friendlyname="TimeBetweenPurgingPendingKillObjects" notes="Unknown at this time">60.000000</floatproperty>
+  </Section>
+  <Section name="SystemSettings">
+    <boolproperty propertyname="OnlyStreamInTextures" friendlyname="OnlyStreamInTextures" notes="Unknown at this time">FALSE</boolproperty>
+  </Section>
+  <Section name="D3DDrv.D3DRenderDevice">
+    <intproperty propertyname="MaxTranslucencyLayers" friendlyname="MaxTranslucencyLayers" notes="Unknown at this time">2</intproperty>
+    <boolproperty propertyname="DisableHWShadowMaps" friendlyname="DisableHWShadowMaps" notes="Unknown at this time">True</boolproperty>
+    <nameproperty propertyname="BIOPixelShaderVersion" friendlyname="BIOPixelShaderVersion" notes="Unknown at this time">ps_3_0</nameproperty>
+    <nameproperty propertyname="BIOVertexShaderVersion" friendlyname="BIOVertexShaderVersion" notes="Unknown at this time">vs_2_0</nameproperty>
+  </Section>
+  <Section name="Engine.RenderDevice">
+    <boolproperty propertyname="bUsePostProcessEffects" friendlyname="bUsePostProcessEffects" notes="Unknown at this time">True</boolproperty>
+  </Section>
+</properties>

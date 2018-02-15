@@ -24,5 +24,10 @@ namespace MassEffectIniModder.classes
 {
     public class IniPropertyFloat : IniPropertyMaster
     {
+        public override void LoadCurrentValue(IniFile configIni)
+        {
+            base.LoadCurrentValue(configIni);
+            CurrentValue = CurrentValue.TrimEnd('f');
+        }
     }
 }

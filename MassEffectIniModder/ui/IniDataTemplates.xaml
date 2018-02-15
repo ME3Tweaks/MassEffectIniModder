@@ -18,7 +18,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     xmlns:v="clr-namespace:MassEffectIniModder.classes"
                     x:Class="MassEffectIniModder.ui.IniDataTemplates"
                     >
-    <GridLength x:Key="Column1Width">200</GridLength>
+    <GridLength x:Key="Column1Width">250</GridLength>
     <GridLength x:Key="Column2Width">155</GridLength>
     <GridLength x:Key="Column3Width">120</GridLength>
     <GridLength x:Key="Column4Width">*</GridLength>

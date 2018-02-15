@@ -62,5 +62,32 @@ namespace MassEffectIniModder.classes
         {
             get { return Choices[CurrentSelectedIndex].IniValue; }
         }
+
+        public override void LoadCurrentValue(IniFile configIni)
+        {
+            string val = configIni.Read(PropertyName, SectionName);
+            int index = -1;
+            bool indexFound = false;
+            foreach (IniPropertyEnumValue enumval in Choices)
+            {
+                index++;
+                if (enumval.IniValue.Equals(val, StringComparison.InvariantCultureIgnoreCase))
+                {
+                    indexFound = true;
+                    break;
+                }
+            }
+            if (!indexFound)
+            {
+                //user has their own item
+                IniPropertyEnumValue useritem = new IniPropertyEnumValue();
+                useritem.FriendlyName = useritem.IniValue = val;
+                Choices.Add(useritem);
+                CurrentSelectedIndex = Choices.Count - 1;
+            } else
+            {
+                CurrentSelectedIndex = index;
+            }
+        }
     }
 }

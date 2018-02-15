@@ -116,9 +116,9 @@
     <Resource Include="images\me3tweaks.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="propertymaps\BioEngineMapping.xml" />
-    <Resource Include="propertymaps\BioGameMapping.xml" />
-    <Resource Include="propertymaps\BioPartyMapping.xml" />
+    <EmbeddedResource Include="propertymaps\BioEngine.xml" />
+    <EmbeddedResource Include="propertymaps\BioGame.xml" />
+    <EmbeddedResource Include="propertymaps\BioParty.xml" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="images\MEIM.ico" />

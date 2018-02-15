@@ -20,7 +20,7 @@ using System.Text;
 
 namespace MassEffectIniModder.classes
 {
-        class IniFile   // revision 11
+        public class IniFile   // revision 11
         {
             string Path;
             string EXE = Assembly.GetExecutingAssembly().GetName().Name;
