@@ -76,6 +76,12 @@ namespace MassEffectIniModder.classes
             }
         }
 
+        public override void LoadCurrentValue(IniFile configIni)
+        {
+            base.LoadCurrentValue(configIni);
+            CurrentSelectedBoolIndex = bool.Parse(CurrentValue) ? 0 : 1; 
+        }
+
         public override void Reset()
         {
             if (CurrentSelectedBoolIndex != (_originalBoolValue ? 0 : 1))

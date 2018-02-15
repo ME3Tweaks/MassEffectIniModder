@@ -278,5 +278,16 @@ namespace MassEffectIniModder
         {
             EnableConsole = Checkbox_EnableInGameConsole.IsChecked.Value;
         }
+
+        private void Image_ME3Tweaks_Click(object sender, MouseButtonEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start("https://me3tweaks.com");
+            } catch (Exception ex)
+            {
+
+            }
+        }
     }
 }

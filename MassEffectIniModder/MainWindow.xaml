@@ -28,7 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <RowDefinition Height="35" />
         </Grid.RowDefinitions>
         <TabControl Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TabItem Header="BioEngine" VerticalAlignment="Stretch">
+            <TabItem Header="BioEngine" VerticalAlignment="Stretch" ToolTip="Attributes that modify the game engine">
                 <ListView x:Name="ListView_BIOEngine" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle>
@@ -41,7 +41,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </ListView.GroupStyle>
                 </ListView>
             </TabItem>
-            <TabItem Header="BioGame" VerticalAlignment="Stretch">
+            <TabItem Header="BioGame" VerticalAlignment="Stretch" ToolTip="Attributes that modify gameplay">
                 <ListView x:Name="ListView_BIOGame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle>
@@ -54,7 +54,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </ListView.GroupStyle>
                 </ListView>
             </TabItem>
-            <TabItem Header="BioParty" VerticalAlignment="Stretch">
+            <TabItem Header="BioParty" VerticalAlignment="Stretch" ToolTip="Attributes that modify you and your party">
                 <ListView x:Name="ListView_BIOParty" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle>
@@ -68,15 +68,47 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 </ListView>
             </TabItem>
             <TabItem Header="About">
-                <StackPanel Background="#FFE5E5E5">
-                    <Image HorizontalAlignment="Left" Width="300" VerticalAlignment="Top" Source="images/me3tweaks.png"/>
-                    <TextBlock x:Name="TextBlock_AssemblyVersion" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15"><Run Text="Version "/></TextBlock>
+                <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="84" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130" />
 
-                </StackPanel>
+                        <ColumnDefinition Width="35*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="images/MEIM.png" Grid.Row="0" Grid.Column="0" Margin="4" ToolTip="Hello!"/>
+                    <StackPanel Grid.Column="1" Grid.Row="0" Margin="0,3,0,0">
+                        <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="20"  Text="Mass Effect Ini Modder" FontWeight="Light"/>
+                        <TextBlock x:Name="TextBlock_AssemblyVersion" HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="15" FontWeight="Light" Text="Version"/>
+                        <Image HorizontalAlignment="Left" Height="32" VerticalAlignment="Top" Source="images/me3tweaks.png" Margin="8,0,0,0" Cursor="Hand" MouseDown="Image_ME3Tweaks_Click" ToolTip="Software developed with love by ME3Tweaks"/>
+
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Left" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" Margin="0,3,0,0">
+                        <TextBlock Text=" Mass Effect Ini Modder&#10;
+Copyright (C) 2018 ME3Tweaks&#10;
+&#10;
+This program is free software: you can redistribute it and/or modify&#10;
+it under the terms of the GNU General Public License as published by&#10;
+the Free Software Foundation, either version 3 of the License, or&#10;
+(at your option) any later version.&#10;
+&#10;
+This program is distributed in the hope that it will be useful,&#10;
+but WITHOUT ANY WARRANTY; without even the implied warranty of&#10;
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#10;
+GNU General Public License for more details.&#10;&#10;
+Mass Effect is a registered trademark of EA INTERNATIONAL (STUDIO&#10; AND PUBLISHING) LTD. This program has no affiliation with BioWare&#10; or Electronic Arts."/>
+                    </StackPanel>
+
+                </Grid>
             </TabItem>
         </TabControl>
             <DockPanel Grid.Row="1" HorizontalAlignment="Stretch" Margin="3">
-                <CheckBox Name="Checkbox_EnableInGameConsole" Content="Enable in-game console (via ~)" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="5,0,0,0" Click="Checkbox_EnableInGameConsole_Click"/>
+            <CheckBox Name="Checkbox_EnableInGameConsole" Content="Enable in-game console (via ~)" DockPanel.Dock="Left" VerticalAlignment="Center" Margin="5,0,0,0" Click="Checkbox_EnableInGameConsole_Click" ToolTip="Enables the in game console to be opened up with the tilde ~ key."/>
+            <!--<Separator Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5"/>
+                <CheckBox Name="Checkbox_SkipStartup" Content="Skip startup movies" DockPanel.Dock="Left" VerticalAlignment="Center"  Click="Checkbox_EnableInGameConsole_Click" ToolTip="Rename the startup movie .bik files to end with .bak. This makes startup much faster."/>
+                -->
                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" DockPanel.Dock="Right" VerticalAlignment="Center">
                     <TextBlock Name="TextBlock_Status" Text="Make sure to press save to save your changes" VerticalAlignment="Center"/> 
                     <Button Content="Reset All" Click="Reset_Click" Padding="4" Margin="10,0,0,0" ToolTip="Resets all properties that this tool can modify to default values"/>

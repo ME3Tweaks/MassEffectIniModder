@@ -24,8 +24,8 @@
     </enumproperty>    
   </Section>
   <Section name="Engine.HUD">
-    <floatproperty propertyname="HudCanvasScale" friendlyname="HudCanvasScale" notes="Unknown at this time">0.95</floatproperty>
-    <boolproperty propertyname="bShowHud" friendlyname="Show HUD" notes="Turning this off will turn off almost all of the interface. Good luck!">true</boolproperty>
+    <!-- <floatproperty propertyname="HudCanvasScale" friendlyname="HudCanvasScale" notes="Unknown at this time">0.95</floatproperty>-->
+    <boolproperty propertyname="bShowHud" friendlyname="Show HUD" notes="Turning this off will turn off almost all of the interface (not menus). Good luck!">true</boolproperty>
   </Section>
   <Section name="Engine.WorldInfo">
     <floatproperty propertyname="DefaultGravityZ" friendlyname="Default gravity" notes="Value is in centimeters per second squared. Negative is down. Default is Earth gravity. Do not set to a value >= 0.">-981</floatproperty>
@@ -38,7 +38,7 @@
     <intproperty propertyname="VehicleCheckRadius" friendlyname="VehicleCheckRadius" notes="Unknown at this time">500</intproperty>
   </Section>
   <Section name="BIOC_Base.BioWorldInfo">
-    <intproperty propertyname="m_nScalePawnsToCharacterLevel" friendlyname="m_nScalePawnsToCharacterLevel" notes="Unknown at this time">0</intproperty>
+    <intproperty propertyname="m_nScalePawnsToCharacterLevel" friendlyname="m_nScalePawnsToCharacterLevel" notes="This is a boolean value. Set to 0 for false, 1 for true.">0</intproperty>
     <boolproperty propertyname="m_bAdvancedDifficultyScaling" friendlyname="m_bAdvancedDifficultyScaling" notes="Unknown at this time">TRUE</boolproperty>
     <floatproperty propertyname="m_fGameOverPauseTime" friendlyname="m_fGameOverPauseTime" notes="Unknown at this time">3</floatproperty>
     <floatproperty propertyname="m_fConversationInterruptDistance" friendlyname="m_fConversationInterruptDistance" notes="Unknown at this time">2500</floatproperty>
@@ -56,9 +56,6 @@
     <boolproperty propertyname="m_bPawnTeleportOnFailure" friendlyname="m_bPawnTeleportOnFailure" notes="Unknown at this time">FALSE</boolproperty>
     <floatproperty propertyname="m_AIWeaponTargetStepoutBiases" friendlyname="m_AIWeaponTargetStepoutBiases" notes="Unknown at this time">0.5</floatproperty>
     <floatproperty propertyname="m_AIPowerTargetStepoutBiases" friendlyname="m_AIPowerTargetStepoutBiases" notes="Unknown at this time">1</floatproperty>
-  </Section>
-  <Section name="BIOC_Base.BioCamera">
-    <boolproperty propertyname="m_bCameraIsWidescreen" friendlyname="Widescreen camera" notes="Unknown at this time">true</boolproperty>
   </Section>
   <Section name="BIOC_Base.BioCameraUtility">
     <intproperty propertyname="m_bDoCamShake" friendlyname="m_bDoCamShake" notes="Unknown at this time">1</intproperty>
@@ -99,9 +96,6 @@
   </Section>
   <Section name="BIOC_Base.BioItem">
     <floatproperty propertyname="m_fSalvageMultiplier" friendlyname="Salvage multiplier" notes="Unknown at this time">0.1</floatproperty>
-  </Section>
-  <Section name="BIOC_Base.BioCameraBehaviorConversation">
-    <boolproperty propertyname="m_bIdleCamEnabled" friendlyname="Idle camera" notes="Unknown at this time">FALSE</boolproperty>
   </Section>
   <Section name="BIOC_Base.BioConversation">
     <floatproperty propertyname="m_fSubtitleTimingModifier" friendlyname="m_fSubtitleTimingModifier" notes="Unknown at this time">0.5</floatproperty>
