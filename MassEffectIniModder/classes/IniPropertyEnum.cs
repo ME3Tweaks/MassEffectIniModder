@@ -89,5 +89,13 @@ namespace MassEffectIniModder.classes
                 CurrentSelectedIndex = index;
             }
         }
+
+        public override void Reset()
+        {
+            if (CurrentSelectedIndex != 0)
+            {
+                CurrentSelectedIndex = 0;
+            }
+        }
     }
 }

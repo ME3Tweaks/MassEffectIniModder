@@ -21,7 +21,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     <GridLength x:Key="Column1Width">250</GridLength>
     <GridLength x:Key="Column2Width">155</GridLength>
     <GridLength x:Key="Column3Width">120</GridLength>
-    <GridLength x:Key="Column4Width">*</GridLength>
+    <GridLength x:Key="Column4Width">400</GridLength>
     <Thickness x:Key="LeftMargin" Left="5"/>
     <Thickness x:Key="FirstItemMargin" Left="12"/>
 
@@ -34,9 +34,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Choices}" DisplayMemberPath="FriendlyName" SelectedIndex="{Binding Path=CurrentSelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" ItemsSource="{Binding Choices}" DisplayMemberPath="FriendlyName" VerticalContentAlignment="Center" SelectedIndex="{Binding Path=CurrentSelectedIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
-            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap"/>
         </Grid>
     </DataTemplate>
     <DataTemplate DataType="{x:Type v:IniPropertyInt}">
@@ -48,9 +48,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" />
+            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"  />
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
-            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch"  VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch"  VerticalAlignment="Center" TextWrapping="Wrap"/>
         </Grid>
     </DataTemplate>
     <DataTemplate DataType="{x:Type v:IniPropertyFloat}">
@@ -62,9 +62,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" />
+            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
-            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap"/>
         </Grid>
     </DataTemplate>
     <DataTemplate DataType="{x:Type v:IniPropertyBool}">
@@ -76,12 +76,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" IsEditable="False" SelectedIndex="{Binding Path=CurrentSelectedBoolIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+            <ComboBox Grid.Column="1" HorizontalAlignment="Stretch" IsEditable="False" VerticalContentAlignment="Center" SelectedIndex="{Binding Path=CurrentSelectedBoolIndex, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
                 <ComboBoxItem Content="True"/>
                 <ComboBoxItem Content="False"/>
             </ComboBox>
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
-            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap"/>
 
         </Grid>
     </DataTemplate>
@@ -97,7 +97,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <TextBlock Grid.Column="1" Text="{Binding CurrentValue}" VerticalAlignment="Center" ToolTip="{Binding PropertyName}"/>
 
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
-            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center"/>
+            <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap"/>
 
         </Grid>
     </DataTemplate>

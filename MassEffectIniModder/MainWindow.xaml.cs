@@ -31,6 +31,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 using System.Xml.Linq;
 
 namespace MassEffectIniModder
@@ -44,11 +45,14 @@ namespace MassEffectIniModder
 
         public event PropertyChangedEventHandler PropertyChanged;
         private string _status;
-        public string Status {
-            get {
+        public string Status
+        {
+            get
+            {
                 return _status;
             }
-            set {
+            set
+            {
                 _status = value;
                 this.OnPropertyChanged("Status");
             }
@@ -154,17 +158,21 @@ namespace MassEffectIniModder
 
         private void Save_Click(object sender, RoutedEventArgs e)
         {
-            Status = "Saving...";
-
-            //hack to not block UI thread without doing a bunch of async and ui thread stuff.
-            System.Threading.Timer timer = null;
-            timer = new System.Threading.Timer((obj) =>
+            var timer = new DispatcherTimer();
+            TextBlock_Status.Text = "Saving...";
+            timer.Interval = TimeSpan.FromMilliseconds(20);
+            bool run = true;
+            timer.Tick += new EventHandler(async (object s, EventArgs a) =>
             {
-                saveData();
-                timer.Dispose();
-            }, null, 100, System.Threading.Timeout.Infinite);
-
-
+                if (run)
+                {
+                    run = false;
+                    await Task.Run(() => saveData());
+                    ShowMessage("Ini configuration saved");
+                    timer.Stop();
+                }
+            });
+            timer.Start();
         }
 
         internal void OnPropertyChanged(string propertyName)
@@ -182,36 +190,73 @@ namespace MassEffectIniModder
 
             foreach (KeyValuePair<ListView, string> kp in saveMap)
             {
-                if (File.Exists(configFileFolder + "\\" + kp.Value))
+                string file = configFileFolder + "\\" + kp.Value;
+                if (File.Exists(file))
                 {
+                    File.SetAttributes(file, File.GetAttributes(file) & ~FileAttributes.ReadOnly);
+
                     IniFile ini = new IniFile(configFileFolder + "\\" + kp.Value);
                     foreach (IniPropertyMaster prop in kp.Key.Items)
                     {
                         ini.Write(prop.PropertyName, prop.ValueToWrite, prop.SectionName);
                         //Console.WriteLine("[" + prop.SectionName + "] " + prop.PropertyName + "=" + prop.ValueToWrite);
                     }
+                    File.SetAttributes(file, File.GetAttributes(file) | FileAttributes.ReadOnly);
                 }
             }
-
-            if (File.Exists(configFileFolder + "\\BIOInput.ini"))
+            string inputinipath = configFileFolder + "\\BIOInput.ini";
+            if (File.Exists(inputinipath))
             {
+                File.SetAttributes(inputinipath, File.GetAttributes(inputinipath) & ~FileAttributes.ReadOnly);
+
                 IniFile inputini = new IniFile(configFileFolder + "\\BIOInput.ini");
                 string section = "Engine.Console";
                 if (EnableConsole)
                 {
+                    Console.WriteLine("Saving ocnsole");
                     inputini.Write("ConsoleKey", "Tilde", section);
                 }
                 else
                 {
                     inputini.DeleteKey("ConsoleKey", section);
                 }
+                File.SetAttributes(inputinipath, File.GetAttributes(inputinipath) | FileAttributes.ReadOnly);
             }
-            Status = "Ini configuration saved";
         }
 
         private void Reset_Click(object sender, RoutedEventArgs e)
         {
-            Status = "Reset";
+            ListView[] lists = { ListView_BIOEngine, ListView_BIOGame, ListView_BIOParty };
+            List<IniPropertyMaster> items = new List<IniPropertyMaster>();
+            foreach (ListView lv in lists)
+            {
+                foreach (IniPropertyMaster lvi in lv.Items)
+                {
+                    items.Add(lvi);
+                }
+            }
+            foreach (IniPropertyMaster prop in items)
+            {
+                prop.Reset();
+            }
+            ShowMessage("Items have been reset to default values");
+        }
+
+        /// <summary>
+        /// Shows a message in the statusbar, which is cleared after a few seconds.
+        /// </summary>
+        /// <param name="v">String to display</param>
+        private void ShowMessage(string v)
+        {
+            TextBlock_Status.Text = v;
+            var timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromMilliseconds(4000);
+            timer.Tick += new EventHandler((object s, EventArgs a) =>
+            {
+                TextBlock_Status.Text = "";
+                timer.Stop();
+            });
+            timer.Start();
         }
 
         public string GetPropertyMap(string filename)

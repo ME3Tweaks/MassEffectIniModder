@@ -95,5 +95,13 @@ namespace MassEffectIniModder.classes
                 CurrentValue = val;
             }
         }
+
+        public virtual void Reset()
+        {
+            if (CurrentValue != OriginalValue)
+            {
+                CurrentValue = OriginalValue;
+            }
+        }
     }
 }

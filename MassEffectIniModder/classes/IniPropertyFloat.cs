@@ -28,6 +28,9 @@ namespace MassEffectIniModder.classes
         {
             base.LoadCurrentValue(configIni);
             CurrentValue = CurrentValue.TrimEnd('f');
+            CurrentValue = CurrentValue.Contains(".") ? CurrentValue.TrimEnd('0').TrimEnd('.') : CurrentValue;
         }
+
+
     }
 }

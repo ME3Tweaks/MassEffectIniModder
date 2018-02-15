@@ -1,29 +1,28 @@
 <properties>
-  <Section name="Engine.Engine">
-    <floatproperty propertyname="CameraFOVThreshold" friendlyname="CameraFOVThreshold" notes="Unknown at this time">15.0</floatproperty>
-  </Section>
   <Section name="Engine.GameEngine">
-    <boolproperty propertyname="bSmoothFrameRate" friendlyname="Cap framerate" notes="Unknown at this time">TRUE</boolproperty>
-    <floatproperty propertyname="MinSmoothedFrameRate" friendlyname="Min framerate" notes="Framerate cap if the system is struggling to meet the max cap consistently">22</floatproperty>
-    <floatproperty propertyname="MaxSmoothedFrameRate" friendlyname="Max framerate" notes="Maximum framerate cap. Setting this to above 62 may cause issues as the tick time between frames is used in some calculations.">62</floatproperty>
-    <boolproperty propertyname="m_bPlayLogoMovie" friendlyname="m_bPlayLogoMovie" notes="Unknown at this time">False</boolproperty>
-    <boolproperty propertyname="m_bIsLogoMovieInterruptable" friendlyname="m_bIsLogoMovieInterruptable" notes="Unknown at this time">False</boolproperty>
-    <boolproperty propertyname="bForceStaticTerrain" friendlyname="bForceStaticTerrain" notes="Unknown at this time">False</boolproperty>
-    <boolproperty propertyname="bEnableVSMShadows" friendlyname="bEnableVSMShadows" notes="Unknown at this time">False</boolproperty>
-    <boolproperty propertyname="bRenderTerrainCollisionAsOverlay" friendlyname="bRenderTerrainCollisionAsOverlay" notes="Unknown at this time">False</boolproperty>
-    <boolproperty propertyname="bDisablePhysXHardwareSupport" friendlyname="bDisablePhysXHardwareSupport" notes="Unknown at this time">False</boolproperty>
-    <floatproperty propertyname="TimeBetweenPurgingPendingKillObjects" friendlyname="TimeBetweenPurgingPendingKillObjects" notes="Unknown at this time">60.000000</floatproperty>
+    <boolproperty propertyname="bSmoothFrameRate" friendlyname="Cap framerate" notes="Setting this to true makes the 'Max framerate' property enforced. Turning this off uncaps it.">TRUE</boolproperty>
+    <floatproperty propertyname="MaxSmoothedFrameRate" friendlyname="Max framerate" notes="Maximum framerate cap. Setting this to above 62 may cause issues as the tick time between frames is used in some calculations">62</floatproperty>
+    <boolproperty propertyname="bForceStaticTerrain" friendlyname="Force static terrain" notes="Unknown at this time">False</boolproperty>
+    <boolproperty propertyname="bDisablePhysXHardwareSupport" friendlyname="Disable PhysX on hardware" notes="Turning this on will make physics calculations run on the CPU. This only matters if you have an Nvidia graphics card">False</boolproperty>
+    <!--
+    <boolproperty propertyname="bEnableVSMShadows" friendlyname="Enable VSM shadows" notes="Toggle VSM (Variance Shadow Map) usage for projected shadows">False</boolproperty>
+
+      <floatproperty propertyname="ModShadowFadeDistanceExponent" friendlyname="Shadow fading distance" notes="Set to 0 to show full shadows, set to 1 to disable all shadows. Values in-between will have shadows fade out">0.2</floatproperty>-->
   </Section>
   <Section name="SystemSettings">
-    <boolproperty propertyname="OnlyStreamInTextures" friendlyname="OnlyStreamInTextures" notes="Unknown at this time">FALSE</boolproperty>
+    <boolproperty propertyname="StaticDecals" friendlyname="Show static decals" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="DynamicDecals" friendlyname="Show dynamic decals" notes="Turn on or off temporary decals like bullet impacts. In almost all instances this should be left on">TRUE</boolproperty>
+    <boolproperty propertyname="DynamicLights" friendlyname="Use dynamic lighting" notes="Lighting for dynamic objects. In almost all instances this should be left on">TRUE</boolproperty>
+    <boolproperty propertyname="LightEnvironmentShadows" friendlyname="Use composite lighting" notes="Lighting from objects like stars. Turning this off has very little visual impact">TRUE</boolproperty>
+    <boolproperty propertyname="DepthOfField" friendlyname="Depth of field" notes="Turn off to disable the sharpening or blurring of objects at different distances">TRUE</boolproperty>
+    <boolproperty propertyname="QualityBloom" friendlyname="Quality bloom" notes="Turning this off uses a slightly faster bloom algorithm. Bloom cannot be turned off in Mass Effect">TRUE</boolproperty>
+    <boolproperty propertyname="Trilinear" friendlyname="Trilinear filtering" notes="Increases texture clarity (only slightly)">TRUE</boolproperty>
   </Section>
   <Section name="D3DDrv.D3DRenderDevice">
-    <intproperty propertyname="MaxTranslucencyLayers" friendlyname="MaxTranslucencyLayers" notes="Unknown at this time">2</intproperty>
-    <boolproperty propertyname="DisableHWShadowMaps" friendlyname="DisableHWShadowMaps" notes="Unknown at this time">True</boolproperty>
-    <nameproperty propertyname="BIOPixelShaderVersion" friendlyname="BIOPixelShaderVersion" notes="Unknown at this time">ps_3_0</nameproperty>
-    <nameproperty propertyname="BIOVertexShaderVersion" friendlyname="BIOVertexShaderVersion" notes="Unknown at this time">vs_2_0</nameproperty>
+    <intproperty propertyname="MaxTranslucencyLayers" friendlyname="Translucency layers" notes="Unknown at this time">2</intproperty>
+    <boolproperty propertyname="DisableHWShadowMaps" friendlyname="Disable hardware shadow maps" notes="Unknown at this time">True</boolproperty>
   </Section>
   <Section name="Engine.RenderDevice">
-    <boolproperty propertyname="bUsePostProcessEffects" friendlyname="bUsePostProcessEffects" notes="Unknown at this time">True</boolproperty>
+    <boolproperty propertyname="bUsePostProcessEffects" friendlyname="Post processing" notes="Turning this off will remove film grain, vignette, and many other post processing effects">True</boolproperty>
   </Section>
 </properties>

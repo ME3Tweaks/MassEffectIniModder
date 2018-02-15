@@ -75,5 +75,13 @@ namespace MassEffectIniModder.classes
                 return CurrentSelectedBoolIndex != (_originalBoolValue ? 0 : 1);
             }
         }
+
+        public override void Reset()
+        {
+            if (CurrentSelectedBoolIndex != (_originalBoolValue ? 0 : 1))
+            {
+                CurrentSelectedBoolIndex = _originalBoolValue ? 0 : 1;
+            }
+        }
     }
 }
