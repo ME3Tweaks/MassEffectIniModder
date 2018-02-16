@@ -286,8 +286,15 @@ namespace MassEffectIniModder
                     IniFile ini = new IniFile(configFileFolder + "\\" + kp.Value);
                     foreach (IniPropertyMaster prop in kp.Key.Items)
                     {
-                        ini.Write(prop.PropertyName, prop.ValueToWrite, prop.SectionName);
-                        //Console.WriteLine("[" + prop.SectionName + "] " + prop.PropertyName + "=" + prop.ValueToWrite);
+                        string validation = prop.Validate("CurrentValue");
+                        if (validation == null)
+                        {
+                            ini.Write(prop.PropertyName, prop.ValueToWrite, prop.SectionName);
+                            //Console.WriteLine("[" + prop.SectionName + "] " + prop.PropertyName + "=" + prop.ValueToWrite);
+                        } else
+                        {
+                            MessageBox.Show("Property not saved: " + prop.FriendlyPropertyName + "\n\nReason: " + validation);
+                        }
                     }
                     File.SetAttributes(file, File.GetAttributes(file) | FileAttributes.ReadOnly);
                 }

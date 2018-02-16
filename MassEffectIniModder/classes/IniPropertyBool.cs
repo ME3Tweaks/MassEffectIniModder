@@ -103,5 +103,10 @@ namespace MassEffectIniModder.classes
                 CurrentSelectedBoolIndex = _originalBoolValue ? 0 : 1;
             }
         }
+
+        internal override string Validate(string columnName)
+        {
+            return null; //no possible bad boolean
+        }
     }
 }

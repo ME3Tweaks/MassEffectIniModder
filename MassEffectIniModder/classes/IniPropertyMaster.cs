@@ -23,7 +23,7 @@ using System.Windows;
 
 namespace MassEffectIniModder.classes
 {
-    public abstract partial class IniPropertyMaster : INotifyPropertyChanged
+    public abstract partial class IniPropertyMaster : INotifyPropertyChanged, IDataErrorInfo
     {
         public event PropertyChangedEventHandler PropertyChanged;
         public string PropertyName { get; set; }
@@ -72,6 +72,36 @@ namespace MassEffectIniModder.classes
                 return ResetEnabled ? "Reset to default" : "Already default";
             }
         }
+
+        #region IDataErrorInfo Members
+
+        string IDataErrorInfo.Error
+        {
+            get { return null; }
+        }
+
+        string IDataErrorInfo.this[string columnName]
+        {
+            get
+            {
+                return Validate(columnName);
+            }
+        }
+
+        internal virtual string Validate(string columnName)
+        {
+            if (columnName == "CurrentValue")
+            {
+                // Validate property and return a string if there is an error
+                if (string.IsNullOrEmpty(CurrentValue))
+                    return "Value cannot be blank";
+            }
+
+            // If there's no error, null gets returned
+            return null;
+        }
+
+        #endregion
 
         public IniPropertyMaster()
         {

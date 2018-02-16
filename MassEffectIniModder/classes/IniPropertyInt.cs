@@ -28,5 +28,23 @@ namespace MassEffectIniModder.classes
         {
 
         }
+
+        internal override string Validate(string columnName)
+        {
+            if (columnName == "CurrentValue")
+            {
+                // Validate property and return a string if there is an error
+                if (string.IsNullOrEmpty(CurrentValue))
+                    return "Value cannot be blank";
+                int f;
+                if (!int.TryParse(CurrentValue, out f))
+                {
+                    return "Value must be a integer";
+                }
+            }
+
+            // If there's no error, null gets returned
+            return null;
+        }
     }
 }
