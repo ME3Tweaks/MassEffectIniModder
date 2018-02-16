@@ -45,8 +45,21 @@ namespace MassEffectIniModder.classes
                     this.OnPropertyChanged("CurrentSelectedIndex");
                     this.OnPropertyChanged("ResetEnabled");
                     this.OnPropertyChanged("DefaultText");
-
+                    this.OnPropertyChanged("Notes");
                 }
+            }
+        }
+
+        private string _originalNotes;
+        public override string Notes
+        {
+            get
+            {
+                return Choices[_selectedIndex].Notes ?? _originalNotes;
+            }
+            set
+            {
+                _originalNotes = value;
             }
         }
 
@@ -84,7 +97,8 @@ namespace MassEffectIniModder.classes
                 useritem.FriendlyName = useritem.IniValue = val;
                 Choices.Add(useritem);
                 CurrentSelectedIndex = Choices.Count - 1;
-            } else
+            }
+            else
             {
                 CurrentSelectedIndex = index;
             }

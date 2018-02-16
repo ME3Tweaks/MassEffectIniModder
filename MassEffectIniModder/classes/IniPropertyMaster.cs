@@ -29,7 +29,7 @@ namespace MassEffectIniModder.classes
         public string PropertyName { get; set; }
         public string FriendlyPropertyName { get; set; }
         public virtual string OriginalValue { get; set; }
-        public string Notes { get; set; }
+        public virtual string Notes { get; set; }
         public string SectionName { get; set; }
         public string SectionFriendlyName { get; set; }
         public string _currentValue;

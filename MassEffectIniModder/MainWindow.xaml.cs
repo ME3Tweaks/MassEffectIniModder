@@ -111,6 +111,7 @@ namespace MassEffectIniModder
                                             Choices = f.Elements("enumvalue").Select(g => new IniPropertyEnumValue
                                             {
                                                 FriendlyName = (string)g.Attribute("friendlyname"),
+                                                Notes = (string)g.Attribute("notes"),
                                                 IniValue = g.Value
                                             }).ToList()
                                         }).ToList(),

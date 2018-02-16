@@ -21,6 +21,18 @@
       <enumvalue friendlyname="Tali">BIOG_Quarian_Hench_C.hench_quarian</enumvalue>
       <enumvalue friendlyname="Liara">BIOG_Asari_Hench_C.hench_asari</enumvalue>
       <enumvalue friendlyname="Jenkins">BIOG_Jenkins_Hench_C.hench_jenkins</enumvalue>
+  	  <enumvalue friendlyname="Joker" notes="Missing most animations.">BIOG_Pilot_Hench_C.hench_pilot</enumvalue>
+	  <enumvalue friendlyname="Kaidan: Naked">BIOA_NOR_C.HMM.hench_humanmale_nkd</enumvalue>
+	  <enumvalue friendlyname="Liara: Naked" notes="Missing some of HUD, cannot use grenades">BIOA_NOR_C.ASA.hench_asari_nkd</enumvalue>
+	  <enumvalue friendlyname="Ashley: Naked">BIOA_NOR_C.HMF.hench_humanFemale_nkd</enumvalue>
+	  <enumvalue friendlyname="Female Shepard: Naked">BIOG_Female_Player_C.Human.Human_Female_Naked</enumvalue>
+	  <enumvalue friendlyname="Male Shepard: Naked">BIOG_Male_Player_C.Human.Human_Male_Naked</enumvalue>
+	  <enumvalue friendlyname="Saren" notes="Has no running animations.">BIOA_STA_C.TUR.sta90_saren</enumvalue>
+	  <enumvalue friendlyname="Balak">BIOA_PR1_C.BAT.prc1_balak</enumvalue>
+	  <enumvalue friendlyname="Varren" notes="Requires Bring Down the Sky. Cannot get points when leveling up. Completely blows up cutscenes.">BIOA_PR1_C.CBT.warDog</enumvalue>
+	  <enumvalue friendlyname="Admiral Ahern" notes="Requires Pinnacle Station. Cannot use weapons and does not get points when leveling up.">BIOA_PRC2_C.HMM.PRC2_HUM_Ahern</enumvalue>
+	  <enumvalue friendlyname="Geth Destroyer" notes="Requires Pinnacle Station.">BIOG_Geth_C.Geth.MIN_GethAntiTank</enumvalue>
+	  <enumvalue friendlyname="Turian Rocket Soldier">BIOA_PRC2_SIM_C.Mercenary.PRC2_ELT_MercenaryTurianRocketSoldier</enumvalue>
     </enumproperty>    
   </Section>
   <Section name="Engine.HUD">

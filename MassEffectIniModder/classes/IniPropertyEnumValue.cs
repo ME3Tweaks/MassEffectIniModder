@@ -25,5 +25,6 @@ namespace MassEffectIniModder.classes
     {
         public string FriendlyName { get; set; }
         public string IniValue { get; set; }
+        public string Notes { get; internal set; }
     }
 }
