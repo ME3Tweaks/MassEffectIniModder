@@ -14,11 +14,15 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 =============================================*/
 using MassEffectIniModder.classes;
+using Octokit;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
+using System.Net;
 using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
@@ -153,7 +157,91 @@ namespace MassEffectIniModder
                     PropertyGroupDescription groupDescription = new PropertyGroupDescription("SectionFriendlyName");
                     view.GroupDescriptions.Add(groupDescription);
                 }
+            }
+            CheckForUpdates();
+        }
 
+        private async void CheckForUpdates()
+        {
+            var versInfo = System.Reflection.Assembly.GetEntryAssembly().GetName().Version;
+            var client = new GitHubClient(new ProductHeaderValue("MassEffectIniModder"));
+            try
+            {
+                var releases = await client.Repository.Release.GetAll("Mgamerz", "MassEffectIniModder");
+                if (releases.Count > 0)
+                {
+                    //The release we want to check is always the latest, so [0]
+                    Release latest = null;
+                    Version latestVer = new Version("0.0.0.0");
+                    foreach (Release r in releases)
+                    {
+                        Version releaseVersion = new Version(r.TagName);
+                        if (releaseVersion > latestVer && r.Assets.Count() > 0)
+                        {
+                            latest = r;
+                            latestVer = releaseVersion;
+                        }
+                    }
+
+                    //is there a latest release?
+                    if (latest != null)
+                    {
+                        Version releaseName = new Version(latest.TagName);
+                        if (versInfo < releaseName && latest.Assets.Count > 0)
+                        {
+                            bool upgrade = false;
+                            var result = MessageBox.Show("An update is available. Update now?", "Update available", MessageBoxButton.YesNo);
+                            upgrade = result == MessageBoxResult.Yes;
+                            if (upgrade)
+                            {
+                                //there's an update
+                                ShowMessage("Downloading update...", -1);
+                                WebClient downloadClient = new WebClient();
+
+                                downloadClient.Headers["Accept"] = "application/vnd.github.v3+json";
+                                downloadClient.Headers["user-agent"] = "MassEffectIniModder";
+                                string temppath = System.IO.Path.GetTempPath();
+                                downloadClient.DownloadFileCompleted += ApplyUpdate;
+                                downloadClient.DownloadProgressChanged += UpdateDownloadProgressChanged;
+                                string downloadPath = temppath + "MassEffectIniModder_Update.zip";
+                                //DEBUG ONLY
+                                //Uri downloadUri = new Uri(latest.Assets[0].BrowserDownloadUrl);
+                                Uri downloadUri = new Uri("http://192.168.1.22/MEIMTestUpdate.zip");
+                                downloadClient.DownloadFileAsync(downloadUri, downloadPath, downloadPath);
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                //don't do anything
+            }
+        }
+
+        private void UpdateDownloadProgressChanged(object sender, DownloadProgressChangedEventArgs e)
+        {
+            TextBlock_Status.Text = "Downloading update " + e.ProgressPercentage + "%";
+        }
+
+        private void ApplyUpdate(object sender, AsyncCompletedEventArgs e)
+        {
+            string path = (string)e.UserState;
+            var executinglocation = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\";
+            try
+            {
+                if (Directory.Exists(executinglocation + "Update"))
+                {
+                    Directory.Delete(executinglocation + "Update", true);
+                }
+                Directory.CreateDirectory(executinglocation + "Update");
+                ZipFile.ExtractToDirectory(path, executinglocation + "Update");
+                Process.Start(executinglocation + @"Update\MassEffectIniModder.exe", "-updatemode");
+                Environment.Exit(0);
+            }
+            catch (Exception ex)
+            {
+                ShowMessage("Error occured while downloading or extracting update", 10000);
             }
         }
 
@@ -247,17 +335,20 @@ namespace MassEffectIniModder
         /// Shows a message in the statusbar, which is cleared after a few seconds.
         /// </summary>
         /// <param name="v">String to display</param>
-        private void ShowMessage(string v)
+        private void ShowMessage(string v, long milliseconds = 4000)
         {
             TextBlock_Status.Text = v;
-            var timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(4000);
-            timer.Tick += new EventHandler((object s, EventArgs a) =>
+            if (milliseconds > 0)
             {
-                TextBlock_Status.Text = "";
-                timer.Stop();
-            });
-            timer.Start();
+                var timer = new DispatcherTimer();
+                timer.Interval = TimeSpan.FromMilliseconds(milliseconds);
+                timer.Tick += new EventHandler((object s, EventArgs a) =>
+                {
+                    TextBlock_Status.Text = "";
+                    timer.Stop();
+                });
+                timer.Start();
+            }
         }
 
         public string GetPropertyMap(string filename)
@@ -285,7 +376,8 @@ namespace MassEffectIniModder
             try
             {
                 System.Diagnostics.Process.Start("https://me3tweaks.com");
-            } catch (Exception ex)
+            }
+            catch (Exception ex)
             {
 
             }
