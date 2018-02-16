@@ -205,8 +205,7 @@ namespace MassEffectIniModder
                                 downloadClient.DownloadProgressChanged += UpdateDownloadProgressChanged;
                                 string downloadPath = temppath + "MassEffectIniModder_Update.zip";
                                 //DEBUG ONLY
-                                //Uri downloadUri = new Uri(latest.Assets[0].BrowserDownloadUrl);
-                                Uri downloadUri = new Uri("http://192.168.1.22/MEIMTestUpdate.zip");
+                                Uri downloadUri = new Uri(latest.Assets[0].BrowserDownloadUrl);
                                 downloadClient.DownloadFileAsync(downloadUri, downloadPath, downloadPath);
                             }
                         }
