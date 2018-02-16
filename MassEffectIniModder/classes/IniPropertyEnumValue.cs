@@ -23,7 +23,18 @@ namespace MassEffectIniModder.classes
 {
     public class IniPropertyEnumValue
     {
-        public string FriendlyName { get; set; }
+        private string _friendlyName;
+        public string FriendlyName
+        {
+            get
+            {
+                return (_friendlyName != null && _friendlyName != "") ? _friendlyName :  IniValue;
+            }
+            set
+            {
+                _friendlyName = value;
+            }
+        }
         public string IniValue { get; set; }
         public string Notes { get; internal set; }
     }
