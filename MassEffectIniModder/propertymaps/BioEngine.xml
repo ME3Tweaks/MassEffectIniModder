@@ -9,6 +9,13 @@
 
       <floatproperty propertyname="ModShadowFadeDistanceExponent" friendlyname="Shadow fading distance" notes="Set to 0 to show full shadows, set to 1 to disable all shadows. Values in-between will have shadows fade out">0.2</floatproperty>-->
   </Section>
+  <Section name="WinDrv.WindowsClient">
+    AudioDeviceClass=ISACTAudio.ISACTAudioDevice
+    <boolproperty canautoreset="false" propertyname="StartupFullscreen" friendlyname="Fullscreen" notes="Setting this to false makes the application run in Windowed mode. There is no borderless windowed mode for Mass Effect">true</boolproperty>
+    <boolproperty canautoreset="false" propertyname="UseVSYNC" friendlyname="Vsync" notes="Turns on or off VSync">FALSE</boolproperty>
+    <intproperty canautoreset="false" propertyname="StartupResolutionX" friendlyname="Game Resolution X" notes="Width of the game resolution.">1024</intproperty>
+    <intproperty canautoreset="false" propertyname="StartupResolutionY" friendlyname="Game Resolution Y" notes="Height of the game resolution.">768</intproperty>
+  </Section>
   <Section name="SystemSettings">
     <boolproperty propertyname="StaticDecals" friendlyname="Show static decals" notes="Unknown at this time">TRUE</boolproperty>
     <boolproperty propertyname="DynamicDecals" friendlyname="Show dynamic decals" notes="Turn on or off temporary decals like bullet impacts. In almost all instances this should be left on">TRUE</boolproperty>

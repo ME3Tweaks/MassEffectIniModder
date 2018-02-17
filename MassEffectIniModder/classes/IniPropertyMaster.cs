@@ -32,6 +32,7 @@ namespace MassEffectIniModder.classes
         public virtual string Notes { get; set; }
         public string SectionName { get; set; }
         public string SectionFriendlyName { get; set; }
+        public bool CanAutoReset { get; set; }
         public string _currentValue;
         public string CurrentValue
         {
