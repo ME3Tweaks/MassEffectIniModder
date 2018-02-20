@@ -48,26 +48,14 @@ namespace MassEffectIniModder
         private bool EnableConsole = false;
 
         public event PropertyChangedEventHandler PropertyChanged;
-        private string _status;
-        public string Status
-        {
-            get
-            {
-                return _status;
-            }
-            set
-            {
-                _status = value;
-                this.OnPropertyChanged("Status");
-            }
-        }
 
         public MainWindow()
         {
             InitializeComponent();
-            Status = "Test";
+
             Version version = Assembly.GetExecutingAssembly().GetName().Version;
             TextBlock_AssemblyVersion.Text = "Version " + version;
+            CheckForUpdates();
 
             string configFileFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\BioWare\Mass Effect\Config";
             if (Directory.Exists(configFileFolder))
@@ -87,6 +75,7 @@ namespace MassEffectIniModder
                                         SectionName = (string)e.Attribute("name"),
                                         BoolProperties = e.Elements("boolproperty").Select(f => new IniPropertyBool
                                         {
+                                            CanAutoReset = f.Attribute("canautoreset") != null ? (bool)f.Attribute("canautoreset") : true,
                                             PropertyName = (string)f.Attribute("propertyname"),
                                             FriendlyPropertyName = (string)f.Attribute("friendlyname"),
                                             Notes = (string)f.Attribute("notes"),
@@ -95,6 +84,7 @@ namespace MassEffectIniModder
                                         }).ToList(),
                                         IntProperties = e.Elements("intproperty").Select(f => new IniPropertyInt
                                         {
+                                            CanAutoReset = f.Attribute("canautoreset") != null ? (bool)f.Attribute("canautoreset") : true,
                                             PropertyName = (string)f.Attribute("propertyname"),
                                             FriendlyPropertyName = (string)f.Attribute("friendlyname"),
                                             Notes = (string)f.Attribute("notes"),
@@ -102,6 +92,7 @@ namespace MassEffectIniModder
                                         }).ToList(),
                                         FloatProperties = e.Elements("floatproperty").Select(f => new IniPropertyFloat
                                         {
+                                            CanAutoReset = f.Attribute("canautoreset") != null ? (bool)f.Attribute("canautoreset") : true,
                                             PropertyName = (string)f.Attribute("propertyname"),
                                             FriendlyPropertyName = (string)f.Attribute("friendlyname"),
                                             Notes = (string)f.Attribute("notes"),
@@ -109,6 +100,7 @@ namespace MassEffectIniModder
                                         }).ToList(),
                                         EnumProperties = e.Elements("enumproperty").Select(f => new IniPropertyEnum
                                         {
+                                            CanAutoReset = f.Attribute("canautoreset") != null ? (bool)f.Attribute("canautoreset") : true,
                                             PropertyName = (string)f.Attribute("propertyname"),
                                             FriendlyPropertyName = (string)f.Attribute("friendlyname"),
                                             Notes = (string)f.Attribute("notes"),
@@ -121,6 +113,7 @@ namespace MassEffectIniModder
                                         }).ToList(),
                                         NameProperties = e.Elements("nameproperty").Select(f => new IniPropertyName
                                         {
+                                            CanAutoReset = f.Attribute("canautoreset") != null ? (bool)f.Attribute("canautoreset") : true,
                                             PropertyName = (string)f.Attribute("propertyname"),
                                             FriendlyPropertyName = (string)f.Attribute("friendlyname"),
                                             Notes = (string)f.Attribute("notes"),
@@ -137,20 +130,22 @@ namespace MassEffectIniModder
                     }
 
                     string inifilepath = configFileFolder + "\\" + System.IO.Path.GetFileNameWithoutExtension(kp.Value) + ".ini";
-                    IniFile configIni = new IniFile(inifilepath);
-                    foreach (IniPropertyMaster prop in items)
+                    if (File.Exists(inifilepath))
                     {
-                        prop.LoadCurrentValue(configIni);
+
+
+                        IniFile configIni = new IniFile(inifilepath);
+                        foreach (IniPropertyMaster prop in items)
+                        {
+                            prop.LoadCurrentValue(configIni);
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Mass Effect Config file " + System.IO.Path.GetFileNameWithoutExtension(kp.Value) + ".ini is missing. It should be located at " + inifilepath + ". Please run the game at least once to generate the default files.");
+                        Environment.Exit(1);
                     }
 
-                    //load console setting
-                    if (File.Exists(configFileFolder + "\\BIOInput.ini"))
-                    {
-                        IniFile inputini = new IniFile(configFileFolder + "\\BIOInput.ini");
-                        string key = inputini.Read("ConsoleKey", "Engine.Console");
-                        Checkbox_EnableInGameConsole.IsChecked = key != "";
-                        EnableConsole = Checkbox_EnableInGameConsole.IsChecked.Value;
-                    }
 
                     kp.Key.ItemsSource = items;
                     CollectionView view = (CollectionView)CollectionViewSource.GetDefaultView(kp.Key.ItemsSource);
@@ -158,7 +153,25 @@ namespace MassEffectIniModder
                     view.GroupDescriptions.Add(groupDescription);
                 }
             }
-            CheckForUpdates();
+            else
+            {
+                MessageBox.Show("Mass Effect Config directory is missing. It should be located at " + configFileFolder + ". Please run the game at least once to generate the default files.");
+                Environment.Exit(1);
+            }
+            //load console setting
+            string binputini = configFileFolder + "\\BIOInput.ini";
+            if (File.Exists(binputini))
+            {
+                IniFile inputini = new IniFile(configFileFolder + "\\BIOInput.ini");
+                string key = inputini.Read("ConsoleKey", "Engine.Console");
+                Checkbox_EnableInGameConsole.IsChecked = key != "";
+                EnableConsole = Checkbox_EnableInGameConsole.IsChecked.Value;
+            }
+            else
+            {
+                MessageBox.Show("Mass Effect Config file BioInput.ini is missing. It should be located at " + binputini + ". Please run the game at least once to generate the default files.");
+                Environment.Exit(1);
+            }
         }
 
         private async void CheckForUpdates()
@@ -286,8 +299,16 @@ namespace MassEffectIniModder
                     IniFile ini = new IniFile(configFileFolder + "\\" + kp.Value);
                     foreach (IniPropertyMaster prop in kp.Key.Items)
                     {
-                        ini.Write(prop.PropertyName, prop.ValueToWrite, prop.SectionName);
-                        //Console.WriteLine("[" + prop.SectionName + "] " + prop.PropertyName + "=" + prop.ValueToWrite);
+                        string validation = prop.Validate("CurrentValue");
+                        if (validation == null)
+                        {
+                            ini.Write(prop.PropertyName, prop.ValueToWrite, prop.SectionName);
+                            //Console.WriteLine("[" + prop.SectionName + "] " + prop.PropertyName + "=" + prop.ValueToWrite);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Property not saved: " + prop.FriendlyPropertyName + "\n\nReason: " + validation);
+                        }
                     }
                     File.SetAttributes(file, File.GetAttributes(file) | FileAttributes.ReadOnly);
                 }
@@ -325,9 +346,12 @@ namespace MassEffectIniModder
             }
             foreach (IniPropertyMaster prop in items)
             {
-                prop.Reset();
+                if (prop.CanAutoReset)
+                {
+                    prop.Reset();
+                }
             }
-            ShowMessage("Items have been reset to default values");
+            ShowMessage("Items have been reset to default values (except basic settings)");
         }
 
         /// <summary>

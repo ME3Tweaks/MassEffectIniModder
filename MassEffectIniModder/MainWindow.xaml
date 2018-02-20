@@ -28,7 +28,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <RowDefinition Height="35" />
         </Grid.RowDefinitions>
         <TabControl Grid.Row="0" Grid.Column="0" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            <TabItem Header="BioEngine" VerticalAlignment="Stretch" ToolTip="Attributes that modify the game engine">
+            <TabItem  VerticalAlignment="Stretch">
+                <TabItem.Header>
+                    <TextBlock Text="BioEngine" 
+                     ToolTip="Attributes that modify the game engine"/>
+                </TabItem.Header>
                 <ListView x:Name="ListView_BIOEngine" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle>
@@ -41,7 +45,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </ListView.GroupStyle>
                 </ListView>
             </TabItem>
-            <TabItem Header="BioGame" VerticalAlignment="Stretch" ToolTip="Attributes that modify gameplay">
+            <TabItem VerticalAlignment="Stretch">
+                <TabItem.Header>
+                    <TextBlock Text="BioGame" ToolTip="Attributes that modify gameplay"/>
+                </TabItem.Header>
                 <ListView x:Name="ListView_BIOGame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle>
@@ -54,7 +61,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </ListView.GroupStyle>
                 </ListView>
             </TabItem>
-            <TabItem Header="BioParty" VerticalAlignment="Stretch" ToolTip="Attributes that modify you and your party">
+            <TabItem VerticalAlignment="Stretch">
+                <TabItem.Header>
+                    <TextBlock Text="BioParty" 
+                     ToolTip="Attributes that modify you and your party"/>
+                </TabItem.Header>
                 <ListView x:Name="ListView_BIOParty" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
                     <ListView.GroupStyle>
                         <GroupStyle>
@@ -67,7 +78,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     </ListView.GroupStyle>
                 </ListView>
             </TabItem>
-            <TabItem Header="About">
+            <TabItem>
+                <TabItem.Header>
+                    <TextBlock Text="About" 
+                     ToolTip="About Mass Effect Ini Modder"/>
+                </TabItem.Header>
                 <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="84" />

@@ -15,7 +15,7 @@ namespace PropertyXMLBuilder
             string configFileFolder = Environment.GetFolderPath(Environment.SpecialFolder.Personal) + @"\BioWare\Mass Effect\Config";
             if (Directory.Exists(configFileFolder))
             {
-                string biofile = "BioEngine.ini";
+                string biofile = "BioGame.ini";
 
                 var lines = File.ReadAllLines(configFileFolder + "\\" + biofile);
                 XmlDocument doc = new XmlDocument();

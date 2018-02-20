@@ -79,7 +79,21 @@ namespace MassEffectIniModder.classes
         public override void LoadCurrentValue(IniFile configIni)
         {
             base.LoadCurrentValue(configIni);
-            CurrentSelectedBoolIndex = bool.Parse(CurrentValue) ? 0 : 1; 
+            try
+            {
+                if (CurrentValue != "")
+                {
+                    CurrentSelectedBoolIndex = bool.Parse(CurrentValue) ? 0 : 1;
+                } else
+                {
+                    CurrentSelectedBoolIndex = bool.Parse(OriginalValue) ? 0 : 1;
+                }
+            } catch (Exception)
+            {
+                //error parsing current value
+                Notes = "Error parsing current bool value: " + CurrentValue;
+                CurrentSelectedBoolIndex = bool.Parse(OriginalValue) ? 0 : 1;
+            }
         }
 
         public override void Reset()
@@ -88,6 +102,11 @@ namespace MassEffectIniModder.classes
             {
                 CurrentSelectedBoolIndex = _originalBoolValue ? 0 : 1;
             }
+        }
+
+        internal override string Validate(string columnName)
+        {
+            return null; //no possible bad boolean
         }
     }
 }

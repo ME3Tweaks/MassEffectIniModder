@@ -1487,15 +1487,20 @@
   <Section name="BIOC_Base.BioSquadAI">
     <floatproperty propertyname="m_nPerceptionFrequency" friendlyname="m_nPerceptionFrequency" notes="Amount of time in seconds it takes the entire squad to update perception versus the player squad">1</floatproperty>
   </Section>
+  <Section name="BIOC_Base.BioInventory">
+    <intproperty propertyname="m_nMaxCredits" friendlyname="Max credits" notes="Max number of credits you can carry">9999999</intproperty>
+    <intproperty propertyname="m_nMaxGrenades" friendlyname="Max grenades" notes="Max number of grenades you can carry">5</intproperty>
+    <intproperty propertyname="m_fMaxSalvage" friendlyname="Max salvage" notes="Max number of omni-gel you can carry">999</intproperty>
+    <intproperty propertyname="m_fMaxMedigel" friendlyname="Max medigel" notes="Max number of medigel you can carry">5</intproperty>
+  </Section>
   <Section name="BIOC_Base.BioItem">
-    <floatproperty propertyname="m_fSalvageMultiplier" friendlyname="Salvage multiplier" notes="Unknown at this time">0.1</floatproperty>
+    <floatproperty propertyname="m_fSalvageMultiplier" friendlyname="Item breakdown multiplier" notes="How much omnigel you get back from breaking down an item">0.1</floatproperty>
   </Section>
   <Section name="BIOC_Base.BioConversation">
     <floatproperty propertyname="m_fSubtitleTimingModifier" friendlyname="m_fSubtitleTimingModifier" notes="Unknown at this time">0.5</floatproperty>
     <floatproperty propertyname="m_fSubtitleTimingMinimum" friendlyname="m_fSubtitleTimingMinimum" notes="Unknown at this time">2</floatproperty>
     <boolproperty propertyname="m_bEnableLookAtWithStage" friendlyname="m_bEnableLookAtWithStage" notes="Unknown at this time">TRUE</boolproperty>
-    <boolproperty propertyname="m_bRemoveWeapons" friendlyname="Remove weapons" notes="Unknown at this time">TRUE</boolproperty>
-    <boolproperty propertyname="m_bEnableConvCooking" friendlyname="m_bEnableConvCooking" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="m_bRemoveWeapons" friendlyname="Remove weapons during conversations" notes="Unknown at this time">TRUE</boolproperty>
     <floatproperty propertyname="m_fVOInterruptRampDownTime" friendlyname="m_fVOInterruptRampDownTime" notes="Unknown at this time">1</floatproperty>
     <floatproperty propertyname="m_fTutorialDelay" friendlyname="Tutorial delay" notes="Unknown at this time">10</floatproperty>
     <boolproperty propertyname="m_bNextLinePreLoadEnabled" friendlyname="Preload next line" notes="Unknown at this time">TRUE</boolproperty>
@@ -1563,7 +1568,7 @@
     <floatproperty propertyname="m_fMaxRelevancyDistance" friendlyname="m_fMaxRelevancyDistance" notes="Unknown at this time">6250000</floatproperty>
   </Section>
   <Section name="BIOC_Base.BioPawn">
-    <boolproperty propertyname="m_isCameraShakeEnabled" friendlyname="m_isCameraShakeEnabled" notes="Unknown at this time">TRUE</boolproperty>
+    <boolproperty propertyname="m_isCameraShakeEnabled" friendlyname="Camera shake enabled" notes="Allows camera to shake in response to moving, shooting, etc.">TRUE</boolproperty>
     <floatproperty propertyname="m_fWeaponLOSThreshold" friendlyname="m_fWeaponLOSThreshold" notes="Unknown at this time">0.666</floatproperty>
     <floatproperty propertyname="CoverPlayerInterval" friendlyname="CoverPlayerInterval" notes="Player cover update interval - length of time between cover updates">0.1</floatproperty>
     <floatproperty propertyname="CoverNPCInterval" friendlyname="CoverNPCInterval" notes="NPC cover update interval - length of time between cover updates">0.2</floatproperty>
@@ -1575,7 +1580,7 @@
     <floatproperty propertyname="m_fMaxCorpseCleanupScreenSizeThreshold" friendlyname="SM: Corpse cleanup on-screen percent" notes="FOR SKELETAL MESH CORPSES: The corpse must take up this much screen space or less before it is cleaned up even if it is in view">0.1</floatproperty>
   </Section>
   <Section name="BIOC_Base.BioActivePower">
-    <boolproperty propertyname="m_bSkipPowerCooldown" friendlyname="Disable power cooldown" notes="Turn to true to disable cooldown on powers.">FALSE</boolproperty>
+    <boolproperty propertyname="m_bSkipPowerCooldown" friendlyname="Disable power cooldown" notes="Turn to true to disable cooldown on powers. Turning this off will cause AI to constantly spam powers which may make them overpowered or worthless in battle.">FALSE</boolproperty>
     <floatproperty propertyname="m_fLeanDelayTime" friendlyname="m_fLeanDelayTime" notes="Unknown at this time">0.5</floatproperty>
     <floatproperty propertyname="m_fLeanDelayVarianceTime" friendlyname="m_fLeanDelayVarianceTime" notes="Unknown at this time">0.5</floatproperty>
   </Section>

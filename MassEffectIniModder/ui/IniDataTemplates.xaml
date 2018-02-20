@@ -18,6 +18,16 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     xmlns:v="clr-namespace:MassEffectIniModder.classes"
                     x:Class="MassEffectIniModder.ui.IniDataTemplates"
                     >
+    <!-- ValidatingControl Style -->
+    <Style TargetType="{x:Type FrameworkElement}" x:Key="ValidatingControl">
+        <Style.Triggers>
+            <Trigger Property="Validation.HasError" Value="True">
+                <Setter Property="ToolTip" Value="{Binding 
+                Path=(Validation.Errors)[0].ErrorContent, 
+                RelativeSource={x:Static RelativeSource.Self}}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
     <GridLength x:Key="Column1Width">250</GridLength>
     <GridLength x:Key="Column2Width">155</GridLength>
     <GridLength x:Key="Column3Width">120</GridLength>
@@ -48,7 +58,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"  />
+            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center"  />
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch"  VerticalAlignment="Center" TextWrapping="Wrap"/>
         </Grid>
@@ -62,7 +72,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <ColumnDefinition Width="{Binding Source={StaticResource Column4Width}}"/>
             </Grid.ColumnDefinitions>
             <TextBlock Margin="{StaticResource FirstItemMargin}" VerticalAlignment="Center" Grid.Column="0" Text="{Binding FriendlyPropertyName}" ToolTip="{Binding PropertyName}"/>
-            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue,UpdateSourceTrigger=PropertyChanged}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
+            <TextBox Grid.Column="1" Text="{Binding Path=CurrentValue,UpdateSourceTrigger=PropertyChanged,ValidatesOnDataErrors=True}" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" />
             <Button Grid.Column="2" Margin="{StaticResource LeftMargin}" Content="{Binding DefaultText}" ToolTip="{Binding OriginalValue}" Click="Button_ResetToDefault_Click" IsEnabled="{Binding ResetEnabled}"/>
             <TextBlock Grid.Column="3" Margin="{StaticResource LeftMargin}" Text="{Binding Notes}" HorizontalAlignment="Stretch" VerticalAlignment="Center" TextWrapping="Wrap"/>
         </Grid>

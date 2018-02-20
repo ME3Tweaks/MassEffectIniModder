@@ -111,5 +111,10 @@ namespace MassEffectIniModder.classes
                 CurrentSelectedIndex = 0;
             }
         }
+
+        internal override string Validate(string columnName)
+        {
+            return null; //no possible bad enum as UI code prevents this
+        }
     }
 }
