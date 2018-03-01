@@ -174,15 +174,15 @@
       <enumvalue friendlyname="Virmire Doctor Droyas" notes="">BIOA_JUG_C.KRO.jug70_kro_docdroyas</enumvalue>
 
       <enumvalue friendlyname="Rana Thanoptis" notes="Listed as salarian for some reason in game files, but in game is asari.">BIOA_JUG_C.SAL.jug70_sal_psyrana</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_JUG_C.HMM.nor_hmm_crew1</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_JUG_C.HMM.nor_hmm_crew2</enumvalue>
+      <enumvalue friendlyname="Normandy Crew Male 1" notes="">BIOA_JUG_C.HMM.nor_hmm_crew1</enumvalue>
+      <enumvalue friendlyname="Normandy Crew Male 2" notes="">BIOA_JUG_C.HMM.nor_hmm_crew2</enumvalue>
 
-      <enumvalue friendlyname="" notes="">BIOG_Geth_C.Geth.BOS_GethHub</enumvalue>
+      <enumvalue friendlyname="Geth Boss" notes="Has issues running without weapons equipped. Very large, may not fit in some areas.">BIOG_Geth_C.Geth.BOS_GethHub</enumvalue>
 
-      <enumvalue friendlyname="" notes="">BIOA_LAV_C.KRO.lav70_kroganboss</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_END_C.ASA.end95_asari_dead_officer</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOG_Geth_C.Hopper.MIN_GethHopper</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOG_Geth_C.armature.BOS_GethColossus_NoDamage</enumvalue>
+      <enumvalue friendlyname="Therum Krogan Battlemaster" notes="">BIOA_LAV_C.KRO.lav70_kroganboss</enumvalue>
+      <enumvalue friendlyname="Endgame Dead Asari Officer" notes="Cannot draw weapons.">BIOA_END_C.ASA.end95_asari_dead_officer</enumvalue>
+      <enumvalue friendlyname="Geth Hopper (White)" notes="Head points towards what is being targeted. Camera is a little low.">BIOG_Geth_C.Hopper.MIN_GethHopper</enumvalue>
+      <enumvalue friendlyname="Geth Colossus" notes="Huge, slow, and can indeed take damage. Do not use.">BIOG_Geth_C.armature.BOS_GethColossus_NoDamage</enumvalue>
       <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMF.nor_hmf_as_crew_lt</enumvalue>
       <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMM.hench_humanmale</enumvalue>
       <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMM.hench_pilot</enumvalue>
