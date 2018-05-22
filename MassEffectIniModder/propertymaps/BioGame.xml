@@ -183,11 +183,9 @@
       <enumvalue friendlyname="Endgame Dead Asari Officer" notes="Cannot draw weapons.">BIOA_END_C.ASA.end95_asari_dead_officer</enumvalue>
       <enumvalue friendlyname="Geth Hopper (White)" notes="Head points towards what is being targeted. Camera is a little low.">BIOG_Geth_C.Hopper.MIN_GethHopper</enumvalue>
       <enumvalue friendlyname="Geth Colossus" notes="Huge, slow, and can indeed take damage. Do not use.">BIOG_Geth_C.armature.BOS_GethColossus_NoDamage</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMF.nor_hmf_as_crew_lt</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMM.hench_humanmale</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMM.hench_pilot</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMM.nor_hmm_crew_light</enumvalue>
-      <enumvalue friendlyname="" notes="">BIOA_NOR_C.TUR.nor10_nihlus</enumvalue>
+      <enumvalue friendlyname="Normandy Crew Female - Lieutenant" notes="Has no animations.">BIOA_NOR_C.HMF.nor_hmf_as_crew_lt</enumvalue>
+      <enumvalue friendlyname="Normandy Crew Male - Light" notes="Has no animations.">BIOA_NOR_C.HMM.nor_hmm_crew_light</enumvalue>
+      <enumvalue friendlyname="Nihlus - Pacifist" notes="Cannot draw weapons or use powers">BIOA_NOR_C.TUR.nor10_nihlus</enumvalue>
       <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMF.nor_hmf_as_crew</enumvalue>
       <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMF.nor10_doctor</enumvalue>
       <enumvalue friendlyname="" notes="">BIOA_NOR_C.HMM.nor10_jenkins</enumvalue>
